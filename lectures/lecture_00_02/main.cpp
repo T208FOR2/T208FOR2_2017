@@ -8,6 +8,9 @@ int main()
     cout << "How many hellos? ";
     cin >> n;
 
+    for (int i = 0; i < n; i++) {
+        cout << "Hello!" << endl;
+    }
 
     return 0;
 }
