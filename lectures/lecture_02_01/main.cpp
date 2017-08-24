@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-    char a,b;
+    int tala;
 
-    cin >> a >> b;
+    cin >> tala;
 
-    cout << "Symbol 1: " << a << endl;
-    cout << "Symbol 2: " << b << endl;
+    cout.precision(20);
+    cout << tala << endl;
 
     return 0;
 }
