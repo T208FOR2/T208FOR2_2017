@@ -7,8 +7,10 @@ int main()
     int a,b;
     cin >> a >> b;
 
-    cout << a << " / " << b << " = " << a / b << endl;
-    cout << a << " % " << b << " = " << a % b << endl;
+    a += 5;  // a = a + 5
+    b *= 2;  // b = b * 2
+
+    cout << a << endl << b << endl;
 
     return 0;
 }
