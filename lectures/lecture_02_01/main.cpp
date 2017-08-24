@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-    double brotatala;
+    char takn;
     int heiltala;
 
-    cin >> brotatala;
+    cin >> takn;
 
-    heiltala = brotatala;
+    heiltala = takn;
 
     cout << heiltala << endl;
 
