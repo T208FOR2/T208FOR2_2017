@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    cout << "This is some \"text\"." << endl;
+    cout << "This is\n\tsome \"text\"." << endl;
 
     return 0;
 }
