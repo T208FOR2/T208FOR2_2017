@@ -4,13 +4,7 @@ using namespace std;
 
 int main()
 {
-    unsigned int tala = 0;
-
-    cout << tala << endl;
-
-    tala = tala - 1;
-
-    cout << tala << endl;
+    cout << "This is some \"text\"." << endl;
 
     return 0;
 }
