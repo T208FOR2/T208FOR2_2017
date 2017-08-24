@@ -4,11 +4,12 @@ using namespace std;
 
 int main()
 {
-    int tala;
+    int tala = 2147483647;
 
-    cin >> tala;
+    cout << tala << endl;
 
-    cout.precision(20);
+    tala = tala + 1;
+
     cout << tala << endl;
 
     return 0;
