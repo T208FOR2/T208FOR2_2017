@@ -7,10 +7,12 @@ int main()
     int a,b;
     cin >> a >> b;
 
-    a += 5;  // a = a + 5
-    b *= 2;  // b = b * 2
-
-    cout << a << endl << b << endl;
+    if (a == b) {
+        cout << "The numbers are the same!" << endl;
+    }
+    else {
+        cout << "Not the same numbers." << endl;
+    }
 
     return 0;
 }
