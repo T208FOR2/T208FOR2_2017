@@ -4,7 +4,14 @@ using namespace std;
 
 int main()
 {
-    cout << "This is\n\tsome \"text\"." << endl;
+    double brotatala;
+    int heiltala;
+
+    cin >> brotatala;
+
+    heiltala = brotatala;
+
+    cout << heiltala << endl;
 
     return 0;
 }
