@@ -4,11 +4,13 @@ using namespace std;
 
 int main()
 {
-    double tala;
-    cin >> tala;
+    char a,b;
 
-    cout.precision(20);
-    cout << tala << endl;
+    cin >> a;
+    cin >> b;
+
+    cout << "Symbol 1: " << a << endl;
+    cout << "Symbol 2: " << b << endl;
 
     return 0;
 }
