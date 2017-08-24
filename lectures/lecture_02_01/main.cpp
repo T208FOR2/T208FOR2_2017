@@ -4,14 +4,10 @@ using namespace std;
 
 int main()
 {
-    char takn;
-    int heiltala;
+    int a,b;
+    cin >> a >> b;
 
-    cin >> takn;
-
-    heiltala = takn;
-
-    cout << heiltala << endl;
+    cout << a / b << endl;
 
     return 0;
 }
