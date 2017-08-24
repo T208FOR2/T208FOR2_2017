@@ -1,26 +1,15 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
 
 int main()
 {
-    int a,b;
-    cin >> a >> b;
+    int i = 0;
+    while (true) {
+        cout << i << " - Hi!" << endl;
+        i += 1;
+    }
 
-    if (a == b) {
-        cout << "The numbers are the same!" << endl;
-        cout << a << " - " << b << endl;
-    }
-    else if (a <= 0) {
-        cout << "a is very small" << endl;
-    }
-    else if (b >= 1000) {
-        cout << "b is pretty big" << endl;
-    }
-    else {
-        cout << "Not the same numbers." << endl;
-        cout << a << " - " << b << endl;
-    }
 
     return 0;
 }
