@@ -7,7 +7,7 @@ int main()
     int a,b;
     cin >> a >> b;
 
-    if (a == b) {
+    if (a = b) {
         cout << "The numbers are the same!" << endl;
     }
     else {
