@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int tala = 2147483647;
+    unsigned int tala = 2147483647;
 
     cout << tala << endl;
 
