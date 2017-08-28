@@ -6,18 +6,22 @@ int main()
 {
     int staersta, naeststaersta, current;
     bool fyrstaitrun = true;
+    bool naeststaersta_oskilgreind = true;
 
     for (int i = 0; i < 10; i++) {
         cin >> current;
 
         if (fyrstaitrun || current > staersta) {
-            naeststaersta = staersta;
+            if (!fyrstaitrun) {
+                naeststaersta = staersta;
+            }
             staersta = current;
 
             fyrstaitrun = false;
         }
-        else if (current > naeststaersta) {
+        else if (naeststaersta_oskilgreind || current > naeststaersta) {
             naeststaersta = current;
+            naeststaersta_oskilgreind = false;
         }
     }
 
