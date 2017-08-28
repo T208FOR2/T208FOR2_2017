@@ -2,11 +2,11 @@
 
 using namespace std;
 
+const double PI = 3.1415926;
+
 int main()
 {
-    const double PI = 3.1415926;
     int i = 0;
-    int n,N;
 
     while (i <= 100) {
 
