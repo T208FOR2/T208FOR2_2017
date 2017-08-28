@@ -2,21 +2,17 @@
 
 using namespace std;
 
-const double PI = 3.1415926;
 
 int main()
 {
-    int i = 0;
+    int a,b;
 
-    while (i <= 100) {
+    cout << "Integer division practice, write two numbers: ";
+    cin >> a >> b;
 
-        if (!(i % 3 == 0 || i % 7 == 0)) {
-            cout << i << endl;
-        }
-
-        i++;
+    if ( a / b > 0 ) {
+        cout << a << " / " << b << " = " << a/b << endl;
     }
-
 
     return 0;
 }
