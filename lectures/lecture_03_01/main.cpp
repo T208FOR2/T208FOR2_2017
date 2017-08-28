@@ -4,18 +4,20 @@ using namespace std;
 
 int main()
 {
-    int staersta, current;
+    int staersta, naeststaersta, current;
+    bool fyrstaitrun = true;
 
     for (int i = 0; i < 10; i++) {
         cin >> current;
 
-        if ( i == 0 || current > staersta ) {
+        if ( fyrstaitrun || current > staersta ) {
             staersta = current;
+            fyrstaitrun = false;
         }
-
     }
 
     cout << "The largest number is " << staersta << endl;
+    cout << "The second largest is " << naeststaersta << endl;
 
     return 0;
 }
