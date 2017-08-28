@@ -4,7 +4,9 @@ using namespace std;
 
 int main()
 {
+    const double PI = 3.1415926;
     int i = 0;
+    int n,N;
 
     while (i <= 100) {
 
@@ -14,6 +16,8 @@ int main()
 
 
         i = i + 1;
+        i += 1;
+        i++;
     }
 
 
