@@ -5,14 +5,16 @@ using namespace std;
 int main()
 {
     int staersta, naeststaersta, current;
-    bool fyrstaitrun = true;
 
     for (int i = 0; i < 10; i++) {
         cin >> current;
 
-        if ( fyrstaitrun || current > staersta ) {
+        if (current > staersta) {
+            naeststaersta = staersta;
             staersta = current;
-            fyrstaitrun = false;
+        }
+        else if (current > naeststaersta) {
+            naeststaersta = current;
         }
     }
 
