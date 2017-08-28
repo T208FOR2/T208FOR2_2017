@@ -10,7 +10,7 @@ int main()
     cout << "Integer division practice, write two numbers: ";
     cin >> a >> b;
 
-    if ( a / b > 0 ) {
+    if ( b != 0 && a / b > 0 ) {
         cout << a << " / " << b << " = " << a/b << endl;
     }
 
