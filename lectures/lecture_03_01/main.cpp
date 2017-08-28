@@ -5,13 +5,17 @@ using namespace std;
 
 int main()
 {
-    int a,b;
+    int i = 0;
 
-    cout << "Integer division practice, write two numbers: ";
-    cin >> a >> b;
+    while (i <= 100) {
 
-    if ( b != 0 && a / b > 0 ) {
-        cout << a << " / " << b << " = " << a/b << endl;
+        //???
+
+        i++;
+    }
+
+    for ( int i = 0 ; i <= 100 ; i++ ) {
+        // ???
     }
 
     return 0;
