@@ -14,6 +14,7 @@ int main()
         if (fyrstaitrun || current > staersta) {
             if (!fyrstaitrun) {
                 naeststaersta = staersta;
+                naeststaersta_oskilgreind = false;
             }
             staersta = current;
 
