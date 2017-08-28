@@ -9,7 +9,7 @@ int main()
     for (int i = 0; i < 10; i++) {
         cin >> current;
 
-        if ( current > staersta ) {
+        if ( i == 0 || current > staersta ) {
             staersta = current;
         }
 
