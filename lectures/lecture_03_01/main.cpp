@@ -2,21 +2,20 @@
 
 using namespace std;
 
-
 int main()
 {
-    int i = 0;
+    int staersta, current;
 
-    while (i <= 100) {
+    for (int i = 0; i < 10; i++) {
+        cin >> current;
 
-        //???
+        if ( current > staersta ) {
+            staersta = current;
+        }
 
-        i++;
     }
 
-    for ( int i = 0 ; i <= 100 ; i++ ) {
-        // ???
-    }
+    cout << "The largest number is " << staersta << endl;
 
     return 0;
 }
