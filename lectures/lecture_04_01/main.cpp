@@ -57,7 +57,8 @@ int main()
             for (int column = 0; column < WIDTH; column++) {
                 if (column == x && row == y) {
                     if (treasure_x == x && treasure_y == y) {
-
+                        cout << "!";
+                        treasure_found = true;
                     }
                     else {
                         if (d == UP) {
