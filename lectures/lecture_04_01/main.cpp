@@ -55,6 +55,22 @@ int main()
             }
         }
 
+        int best_move_x = monster_x, best_move_y = monster_y;
+        int shortest_distance = HEIGHT*HEIGHT + WIDTH*WIDTH;
+
+        for (int temp_x = monster_x - 1; temp_x <= monster_x + 1; temp_x++) {
+            for (int temp_y = monster_y - 1; temp_y <= monster_y + 1; temp_y++) {
+                if ((temp_x - x)*(temp_x - x) + (temp_y - y)*(temp_y - y)  < shortest_distance) {
+                    shortest_distance = (temp_x - x)*(temp_x - x) + (temp_y - y)*(temp_y - y);
+                    best_move_x = temp_x;
+                    best_move_y = temp_y;
+                }
+            }
+        }
+
+        monster_x = best_move_x;
+        monster_y = best_move_y;
+
         for (int row = 0; row < HEIGHT; row++) {
             for (int column = 0; column < WIDTH; column++) {
                 if (column == x && row == y) {
