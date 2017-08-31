@@ -9,10 +9,14 @@ enum directions{UP,RIGHT,DOWN,LEFT};
 
 int main()
 {
-    int x = WIDTH / 2, y = HEIGHT / 2, d = LEFT;
+    int x = WIDTH / 2, y = HEIGHT / 2, d = UP;
     char input = '.';
 
     while ( input != 'q' ) {
+        if (input == 'r') {
+            d = d + 1;
+        }
+
         for (int row = 0; row < HEIGHT; row++) {
             for (int column = 0; column < WIDTH; column++) {
                 if (column == x && row == y) {
