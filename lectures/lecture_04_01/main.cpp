@@ -2,10 +2,13 @@
 
 using namespace std;
 
+const int HEIGHT = 10;
+const int WIDTH = 20;
+
 int main()
 {
-    for (int row = 0; row < 10; row++) {
-        for (int column = 0; column < 20; column++) {
+    for (int row = 0; row < HEIGHT; row++) {
+        for (int column = 0; column < WIDTH; column++) {
             cout << ".";
         }
         cout << endl;
