@@ -94,7 +94,11 @@ int main()
             cout << endl;
         }
 
-        if (treasure_found) {
+        if (caught_by_monster) {
+            cout << "You've been eaten by the monster!!!" << endl;
+            input = 'q';
+        }
+        else if (treasure_found) {
             cout << "You've found the treasure!!!" << endl;
             input = 'q';
         }
