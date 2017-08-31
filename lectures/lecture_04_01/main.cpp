@@ -84,6 +84,9 @@ int main()
                         }
                     }
                 }
+                else if (!caught_by_monster && monster_x == column && monster_y == row) {
+                    cout << "M";
+                }
                 else {
                     cout << ".";
                 }
