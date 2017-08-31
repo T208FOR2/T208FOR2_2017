@@ -25,15 +25,27 @@ int main()
         else if (input == 's') {
             if (d == RIGHT) {
                 x = x + 1;
+                if (x >= WIDTH) {
+                    x = 0;
+                }
             }
             else if (d == LEFT) {
                 x = x - 1;
+                if (x < 0) {
+                    x = WIDTH - 1;
+                }
             }
             else if (d == UP) {
                 y = y - 1;
+                if (y < 0) {
+                    y = HEIGHT-1;
+                }
             }
             else if (d == DOWN) {
                 y = y + 1;
+                if (y >= HEIGHT) {
+                    y = 0;
+                }
             }
         }
 
