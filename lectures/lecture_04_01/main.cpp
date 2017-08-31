@@ -14,7 +14,21 @@ int main()
     for (int row = 0; row < HEIGHT; row++) {
         for (int column = 0; column < WIDTH; column++) {
             if (column == x && row == y) {
-                cout << "O";
+                if (d == UP) {
+                    cout << "^";
+                }
+                else if (d == RIGHT) {
+                    cout << ">";
+                }
+                else if (d == DOWN) {
+                    cout << "v";
+                }
+                else if (d == LEFT) {
+                    cout << "<";
+                }
+                else {
+                    cout << "?";
+                }
             }
             else {
                 cout << ".";
