@@ -11,10 +11,12 @@ int main()
 {
     int x = WIDTH / 2, y = HEIGHT / 2, d = UP;
     int treasure_x = WIDTH / 3, treasure_y = HEIGHT / 3;
+    int monster_x = 0, monster_y = 0;
 
     char input = '.';
 
     bool treasure_found = false;
+    bool caught_by_monster = false;
 
     while ( input != 'q' ) {
         if (input == 'r') {
