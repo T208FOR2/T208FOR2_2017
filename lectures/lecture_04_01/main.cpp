@@ -85,8 +85,14 @@ int main()
             cout << endl;
         }
 
-        cout << "Next action? (q=quit,r=turn right,l=turn left,s=take a step) ";
-        cin >> input;
+        if (treasure_found) {
+            cout << "You've found the treasure!!!" << endl;
+            input = 'q';
+        }
+        else {
+            cout << "Next action? (q=quit,r=turn right,l=turn left,s=take a step) ";
+            cin >> input;
+        }
     }
 
     return 0;
