@@ -14,7 +14,11 @@ int main()
 
     while ( input != 'q' ) {
         if (input == 'r') {
-            d = d + 1;
+            d = (d + 1) % 4;
+        }
+        else if (input == 'l') {
+            d = d - 1;
+
         }
 
         for (int row = 0; row < HEIGHT; row++) {
