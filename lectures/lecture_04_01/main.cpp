@@ -9,7 +9,7 @@ enum directions{UP,RIGHT,DOWN,LEFT};
 
 int main()
 {
-    int x = WIDTH / 2, y = HEIGHT / 2, d = UP;
+    int x = WIDTH / 2, y = HEIGHT / 2, d = LEFT;
 
     for (int row = 0; row < HEIGHT; row++) {
         for (int column = 0; column < WIDTH; column++) {
