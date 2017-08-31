@@ -10,7 +10,11 @@ enum directions{UP,RIGHT,DOWN,LEFT};
 int main()
 {
     int x = WIDTH / 2, y = HEIGHT / 2, d = UP;
+    int treasure_x = WIDTH / 3, treasure_y = HEIGHT / 3;
+
     char input = '.';
+
+    bool treasure_found = false;
 
     while ( input != 'q' ) {
         if (input == 'r') {
