@@ -18,7 +18,9 @@ int main()
         }
         else if (input == 'l') {
             d = d - 1;
-
+            if (d < 0) {
+                d = 3;
+            }
         }
 
         for (int row = 0; row < HEIGHT; row++) {
