@@ -22,6 +22,20 @@ int main()
                 d = 3;
             }
         }
+        else if (input == 's') {
+            if (d == RIGHT) {
+                x = x + 1;
+            }
+            else if (d == LEFT) {
+                x = x - 1;
+            }
+            else if (d == UP) {
+                y = y - 1;
+            }
+            else if (d == DOWN) {
+                y = y + 1;
+            }
+        }
 
         for (int row = 0; row < HEIGHT; row++) {
             for (int column = 0; column < WIDTH; column++) {
