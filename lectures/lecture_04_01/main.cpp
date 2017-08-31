@@ -58,7 +58,11 @@ int main()
         for (int row = 0; row < HEIGHT; row++) {
             for (int column = 0; column < WIDTH; column++) {
                 if (column == x && row == y) {
-                    if (treasure_x == x && treasure_y == y) {
+                    if (monster_x == x && monster_y == y) {
+                        cout << "X";
+                        caught_by_monster = true;
+                    }
+                    else if (treasure_x == x && treasure_y == y) {
                         cout << "!";
                         treasure_found = true;
                     }
