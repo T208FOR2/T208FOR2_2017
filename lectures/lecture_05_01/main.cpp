@@ -6,15 +6,15 @@ double x_i_nta_veldi(double x, int n);
 
 int main()
 {
-    double x;
-    int n;
+    double tala;
+    int veldisvisir;
     double nidurstada;
 
-    cin >> x >> n;
+    cin >> tala >> veldisvisir;
 
-    nidurstada = x_i_nta_veldi(x,n);
+    nidurstada = x_i_nta_veldi(tala, veldisvisir);
 
-    cout << x << " to the power of " << n << " is " << nidurstada << endl;
+    cout << tala << " to the power of " << veldisvisir << " is " << nidurstada << endl;
 
     return 0;
 }
