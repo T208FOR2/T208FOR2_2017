@@ -9,6 +9,7 @@ int main()
     cin >> a >> b;
 
     cout << a << " / " << b << " = " << a / b << endl;
+    cout << a << " / " << b << " = " << static_cast<double>(a) / b << endl;
 
     return 0;
 }
