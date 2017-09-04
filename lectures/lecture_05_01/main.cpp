@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int testfall(int& tala);
+int testfall(int tala, bool& is_cubed);
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
 }
 
 
-int testfall(int& tala) {
+int testfall(int tala, bool& is_cubed) {
     tala = tala + 1;
     return tala;
 }
