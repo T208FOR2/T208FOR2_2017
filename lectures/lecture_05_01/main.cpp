@@ -2,7 +2,7 @@
 
 using namespace std;
 
-
+double x_i_nta_veldi(double x, int n);
 
 int main()
 {
@@ -18,3 +18,14 @@ int main()
 
     return 0;
 }
+
+double x_i_nta_veldi(double x, int n) {
+    double result = x;
+    for (int i = 0; i < n; i++) {
+        result = result * x;
+    }
+    return result;
+}
+
+
+
