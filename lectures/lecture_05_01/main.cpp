@@ -5,10 +5,10 @@ using namespace std;
 
 int main()
 {
-    int tala = 666;
-    double nidurstada = sqrt(tala);
+    int a,b;
+    cin >> a >> b;
 
-    cout << "The root of all evil is " << nidurstada << endl;
+    cout << a << " / " << b << " = " << a / b << endl;
 
     return 0;
 }
