@@ -9,6 +9,8 @@ const int TREASURE_Y = HEIGHT/3;
 
 enum directions{UP,RIGHT,DOWN,LEFT};
 
+char print_status_and_get_next_action(bool caught_by_monster, bool treasure_found);
+
 bool same_place(int x1, int y1, int x2, int y2);
 
 void turn_right(int& direction);
@@ -28,7 +30,6 @@ int main() {
     bool caught_by_monster = false;
 
     while (input != 'q') {
-
         // MOVE PLAYER
         if (input == 'r') {
             turn_right(d);
@@ -47,21 +48,28 @@ int main() {
 
         print_board(x,y,d,monster_x, monster_y, TREASURE_X, TREASURE_Y, caught_by_monster, treasure_found);
 
-        if (caught_by_monster) {
-            cout << "You'be been eaten by the monster!!!" << endl;
-            input = 'q';
-        }
-        else if (treasure_found) {
-            cout << "You've found the treasure!!!" << endl;
-            input = 'q';
-        }
-        else {
-            cout << "Next action? (q=quit,r=turn right, l=turn left, s=take a step) ";
-            cin >> input;
-        }
+        print_status_and_get_next_action(caught_by_monster, treasure_found);
     }
 
     return 0;
+}
+
+char print_status_and_get_next_action(bool caught_by_monster, bool treasure_found) {
+    if (caught_by_monster) {
+        cout << "You'be been eaten by the monster!!!" << endl;
+        return 'q';
+    }
+    else if (treasure_found) {
+        cout << "You've found the treasure!!!" << endl;
+        return 'q';
+    }
+    else {
+        cout << "Next action? (q=quit,r=turn right, l=turn left, s=take a step) ";
+        char input;
+        cin >> input;
+        return input;
+    }
+
 }
 
 bool same_place(int x1, int y1, int x2, int y2) {
