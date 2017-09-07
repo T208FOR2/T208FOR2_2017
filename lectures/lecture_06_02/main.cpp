@@ -9,6 +9,8 @@ const int TREASURE_Y = HEIGHT/3;
 
 enum directions{UP,RIGHT,DOWN,LEFT};
 
+bool same_place(int x1, int y1, int x2, int y2);
+
 void turn_right(int& direction);
 void turn_left(int& direction);
 void take_a_step(int& x, int& y, int direction);
@@ -40,6 +42,9 @@ int main() {
 
         monster_takes_a_step(monster_x, monster_y, x, y);
 
+        caught_by_monster =
+        treasure_found =
+
         print_board(x,y,d,monster_x, monster_y, TREASURE_X, TREASURE_Y, caught_by_monster, treasure_found);
 
         if (caught_by_monster) {
@@ -58,6 +63,11 @@ int main() {
 
     return 0;
 }
+
+bool same_place(int x1, int y1, int x2, int y2) {
+    return (x1 == x2 && y1 == y2);
+}
+
 
 void turn_right(int& direction) {
     direction = (direction + 1) % 4;
