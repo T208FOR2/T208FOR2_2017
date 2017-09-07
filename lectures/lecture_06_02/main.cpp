@@ -9,6 +9,7 @@ const int TREASURE_Y = HEIGHT/3;
 
 enum directions{UP,RIGHT,DOWN,LEFT};
 
+void monster_takes_a_step(int& monster_x, int& monster_y, int x, int y);
 
 void print_board(int x, int y, int d, int monster_x, int monster_y, int treasure_x, int treasure_y,
                  bool caught_by_monster, bool treasure_found);
@@ -62,8 +63,7 @@ int main() {
         }
 
         // MOVE MONSTER
-        monster_takes_a_step();
-
+        monster_takes_a_step(monster_x, monster_y, x, y);
 
         // PRINT
         print_board(x,y,d,monster_x, monster_y, TREASURE_X, TREASURE_Y, caught_by_monster, treasure_found);
