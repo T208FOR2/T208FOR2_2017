@@ -62,20 +62,8 @@ int main() {
         }
 
         // MOVE MONSTER
-        int best_move_x = monster_x, best_move_y = monster_y;
-        int shortest_distance = HEIGHT*HEIGHT+WIDTH*WIDTH;
+        monster_takes_a_step();
 
-        for (int temp_x = monster_x - 1; temp_x <= monster_x + 1; temp_x++) {
-            for (int temp_y = monster_y - 1; temp_y <= monster_y + 1; temp_y++) {
-                if ((temp_x - x)*(temp_x - x) + (temp_y - y)*(temp_y - y) < shortest_distance) {
-                    shortest_distance = (temp_x - x)*(temp_x - x) + (temp_y - y)*(temp_y - y);
-                    best_move_x = temp_x;
-                    best_move_y = temp_y;
-                }
-            }
-        }
-        monster_x = best_move_x;
-        monster_y = best_move_y;
 
         // PRINT
         print_board(x,y,d,monster_x, monster_y, TREASURE_X, TREASURE_Y, caught_by_monster, treasure_found);
@@ -96,6 +84,35 @@ int main() {
 
     return 0;
 }
+
+void monster_takes_a_step(int& monster_x, int& monster_y, int x, int y) {
+    int best_move_x = monster_x, best_move_y = monster_y;
+    int shortest_distance = HEIGHT*HEIGHT+WIDTH*WIDTH;
+
+    for (int temp_x = monster_x - 1; temp_x <= monster_x + 1; temp_x++) {
+        for (int temp_y = monster_y - 1; temp_y <= monster_y + 1; temp_y++) {
+            if ((temp_x - x)*(temp_x - x) + (temp_y - y)*(temp_y - y) < shortest_distance) {
+                shortest_distance = (temp_x - x)*(temp_x - x) + (temp_y - y)*(temp_y - y);
+                best_move_x = temp_x;
+                best_move_y = temp_y;
+            }
+        }
+    }
+    monster_x = best_move_x;
+    monster_y = best_move_y;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 void print_board(int x, int y, int d, int monster_x, int monster_y, int treasure_x, int treasure_y,
                  bool caught_by_monster, bool treasure_found)
