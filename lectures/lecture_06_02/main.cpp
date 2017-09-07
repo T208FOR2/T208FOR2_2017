@@ -42,8 +42,8 @@ int main() {
 
         monster_takes_a_step(monster_x, monster_y, x, y);
 
-        caught_by_monster =
-        treasure_found =
+        caught_by_monster = same_place(x,y, monster_x, monster_y);
+        treasure_found = same_place(x,y, TREASURE_X, TREASURE_Y);
 
         print_board(x,y,d,monster_x, monster_y, TREASURE_X, TREASURE_Y, caught_by_monster, treasure_found);
 
