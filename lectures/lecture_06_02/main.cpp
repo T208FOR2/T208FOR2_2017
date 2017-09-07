@@ -9,7 +9,7 @@ const int TREASURE_Y = HEIGHT/3;
 
 enum directions{UP,RIGHT,DOWN,LEFT};
 
-void player_makes_a_move(int& x, int& y, int& d, char input);
+bool player_makes_a_move(int& x, int& y, int& d, char input);
 char print_status_and_get_next_action(bool caught_by_monster, bool treasure_found);
 
 bool same_place(int x1, int y1, int x2, int y2);
@@ -31,9 +31,9 @@ int main() {
     bool caught_by_monster = false;
 
     while (input != 'q') {
-        player_makes_a_move(x,y,d,input);
-
-        monster_takes_a_step(monster_x, monster_y, x, y);
+        if (player_makes_a_move(x,y,d,input)) {
+            monster_takes_a_step(monster_x, monster_y, x, y);
+        }
 
         caught_by_monster = same_place(x,y, monster_x, monster_y);
         treasure_found = same_place(x,y, TREASURE_X, TREASURE_Y);
@@ -46,15 +46,21 @@ int main() {
     return 0;
 }
 
-void player_makes_a_move(int& x, int& y, int& d, char input) {
+bool player_makes_a_move(int& x, int& y, int& d, char input) {
     if (input == 'r') {
         turn_right(d);
+        return false;
     }
     else if (input == 'l') {
         turn_left(d);
+        return false;
     }
     else if (input == 's') {
         take_a_step(x,y,d);
+        return true;
+    }
+    else {
+        return false;
     }
 }
 
