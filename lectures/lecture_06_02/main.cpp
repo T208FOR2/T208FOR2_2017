@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const bool EASY_MODE = false;
+const bool EASY_MODE = true;
 
 const int WIDTH = 20;
 const int HEIGHT = 10;
@@ -146,18 +146,6 @@ void monster_takes_a_step(int& monster_x, int& monster_y, int x, int y) {
     monster_x = best_move_x;
     monster_y = best_move_y;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 void print_board(int x, int y, int d, int monster_x, int monster_y, int treasure_x, int treasure_y,
                  bool caught_by_monster, bool treasure_found)
