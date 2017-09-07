@@ -40,7 +40,7 @@ int main() {
 
         print_board(x,y,d,monster_x, monster_y, TREASURE_X, TREASURE_Y, caught_by_monster, treasure_found);
 
-        print_status_and_get_next_action(caught_by_monster, treasure_found);
+        input = print_status_and_get_next_action(caught_by_monster, treasure_found);
     }
 
     return 0;
