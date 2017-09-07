@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+const bool EASY_MODE = false;
+
 const int WIDTH = 20;
 const int HEIGHT = 10;
 
@@ -31,7 +33,7 @@ int main() {
     bool caught_by_monster = false;
 
     while (input != 'q') {
-        if (player_makes_a_move(x,y,d,input)) {
+        if (player_makes_a_move(x,y,d,input) || !EASY_MODE) {
             monster_takes_a_step(monster_x, monster_y, x, y);
         }
 
