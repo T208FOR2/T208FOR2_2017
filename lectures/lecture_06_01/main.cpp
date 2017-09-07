@@ -2,35 +2,18 @@
 
 using namespace std;
 
-int turn_right_cbv(int current_direction);
-void turn_right_cbr(int& current_direction);
+int sum(int a, int b);
 
 
-int main()
-{
-    int d = 0;
-    char input = ' ';
-    while (input != 'q') {
-        if (input == 'r') {
-            //d = turn_right_cbv(d);
-            turn_right_cbr(d);
-        }
-        cout << "The direction is: " << d << endl;
+int main() {
+    int a,b,c;
+    cin >> a >> b >> c;
 
-        cout << "Next action? ";
-        cin >> input;
-    }
+    cout << a << " + " << b << " = " << sum(a,b) << endl;
 
     return 0;
 }
 
-// call-by-value version
-int turn_right_cbv(int current_direction) {
-    int new_direction = (current_direction + 1) % 4;
-    return new_direction;
-}
-
-// call-by-reference version
-void turn_right_cbr(int& current_direction) {
-    current_direction = (current_direction + 1) % 4;
+int sum(int a, int b) {
+    return a + b;
 }
