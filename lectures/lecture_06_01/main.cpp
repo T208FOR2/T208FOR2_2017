@@ -2,6 +2,7 @@
 
 using namespace std;
 
+void sum(string s);
 int sum(int a, int b);
 int sum(int a, int b, int c);
 
