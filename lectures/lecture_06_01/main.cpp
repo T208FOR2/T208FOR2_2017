@@ -12,7 +12,7 @@ int main()
     char input = ' ';
     while (input != 'q') {
         if (input == 'r') {
-            d = turn_right_cbv(d);
+            //d = turn_right_cbv(d);
             turn_right_cbr(d);
         }
         cout << "The direction is: " << d << endl;
