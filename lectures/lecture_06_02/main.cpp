@@ -17,6 +17,7 @@ void monster_takes_a_step(int& monster_x, int& monster_y, int x, int y);
 
 void print_board(int x, int y, int d, int monster_x, int monster_y, int treasure_x, int treasure_y,
                  bool caught_by_monster, bool treasure_found);
+
 int main() {
     int d = UP, x = WIDTH/2, y = HEIGHT/2;
     int monster_x = 0, monster_y = 0;
