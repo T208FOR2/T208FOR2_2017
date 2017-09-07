@@ -9,6 +9,9 @@ const int TREASURE_Y = HEIGHT/3;
 
 enum directions{UP,RIGHT,DOWN,LEFT};
 
+
+void print_board(int x, int y, int d, int monster_x, int monster_y, int treasure_x, int treasure_y,
+                 bool caught_by_monster, bool treasure_found);
 int main() {
     int d = UP, x = WIDTH/2, y = HEIGHT/2;
     int monster_x = 0, monster_y = 0;
@@ -75,44 +78,8 @@ int main() {
         monster_y = best_move_y;
 
         // PRINT
-        for (int row = 0; row < HEIGHT; row++) {
-            for (int column = 0; column < WIDTH; column++ ) {
-                if (column == x && row == y) {
-                    if (x == monster_x && y == monster_y) {
-                        cout << "X";
-                        caught_by_monster = true;
-                    }
-                    else if (x == TREASURE_X && y == TREASURE_Y) {
-                        cout << "!";
-                        treasure_found = true;
-                    }
-                    else {
-                        if (d == UP) {
-                            cout << "^";
-                        }
-                        else if (d == RIGHT) {
-                            cout << ">";
-                        }
-                        else if (d == DOWN) {
-                            cout << "v";
-                        }
-                        else if (d == LEFT) {
-                            cout << "<";
-                        }
-                        else {
-                            cout << "?";
-                        }
-                    }
-                }
-                else if (!caught_by_monster && column == monster_x && row == monster_y) {
-                    cout << "M";
-                }
-                else {
-                    cout << ".";
-                }
-            }
-            cout << endl;
-        }
+        print_board(x,y,d,monster_x, monster_y, TREASURE_X, TREASURE_Y, caught_by_monster, treasure_found);
+
         if (caught_by_monster) {
             cout << "You'be been eaten by the monster!!!" << endl;
             input = 'q';
@@ -128,4 +95,45 @@ int main() {
     }
 
     return 0;
+}
+
+void print_board(int x, int y, int d, int monster_x, int monster_y, int treasure_x, int treasure_y,
+                 bool caught_by_monster, bool treasure_found)
+{
+    for (int row = 0; row < HEIGHT; row++) {
+        for (int column = 0; column < WIDTH; column++ ) {
+            if (column == x && row == y) {
+                if (caught_by_monster) {
+                    cout << "X";
+                }
+                else if (treasure_found) {
+                    cout << "!";
+                }
+                else {
+                    if (d == UP) {
+                        cout << "^";
+                    }
+                    else if (d == RIGHT) {
+                        cout << ">";
+                    }
+                    else if (d == DOWN) {
+                        cout << "v";
+                    }
+                    else if (d == LEFT) {
+                        cout << "<";
+                    }
+                    else {
+                        cout << "?";
+                    }
+                }
+            }
+            else if (!caught_by_monster && column == monster_x && row == monster_y) {
+                cout << "M";
+            }
+            else {
+                cout << ".";
+            }
+        }
+        cout << endl;
+    }
 }
