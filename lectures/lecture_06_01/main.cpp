@@ -2,7 +2,7 @@
 
 using namespace std;
 
-
+int turn_right(int current_direction);
 
 
 int main()
@@ -11,7 +11,7 @@ int main()
     char input = ' ';
     while (input != 'q') {
         if (input == 'r') {
-            d = (d + 1) % 4;
+            d = turn_right(d);
         }
         cout << "The direction is: " << d << endl;
 
@@ -19,6 +19,10 @@ int main()
         cin >> input;
     }
 
-
     return 0;
+}
+
+int turn_right(int current_direction) {
+    int new_direction = (current_direction + 1) % 4;
+    return new_direction;
 }
