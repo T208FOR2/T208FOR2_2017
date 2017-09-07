@@ -22,6 +22,7 @@ int main()
     return 0;
 }
 
+// call-by-value version
 int turn_right(int current_direction) {
     int new_direction = (current_direction + 1) % 4;
     return new_direction;
