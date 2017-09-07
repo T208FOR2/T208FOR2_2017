@@ -13,7 +13,10 @@ int main()
         if (input == 'r') {
             d = (d + 1) % 4;
         }
+        cout << "The direction is: " << d << endl;
 
+        cout << "Next action? ";
+        cin >> input;
     }
 
 
