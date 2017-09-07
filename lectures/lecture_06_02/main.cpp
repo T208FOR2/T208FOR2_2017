@@ -9,6 +9,10 @@ const int TREASURE_Y = HEIGHT/3;
 
 enum directions{UP,RIGHT,DOWN,LEFT};
 
+void turn_right(int& direction);
+void turn_left(int& direction);
+void take_a_step(int& x, int& y, int direction);
+
 void monster_takes_a_step(int& monster_x, int& monster_y, int x, int y);
 
 void print_board(int x, int y, int d, int monster_x, int monster_y, int treasure_x, int treasure_y,
@@ -24,42 +28,13 @@ int main() {
 
         // MOVE PLAYER
         if (input == 'r') {
-            d = (d + 1) % 4;
+            turn_right(d);
         }
         else if (input == 'l') {
-            d = d - 1;
-            if (d < 0) {
-                d = 3;
-            }
+            turn_left(d);
         }
         else if (input == 's') {
-            if (d == UP) {
-                y = y - 1;
-                if (y < 0) {
-                    y = HEIGHT-1;
-                }
-            }
-            else if (d == RIGHT) {
-                x = x + 1;
-                if (x >= WIDTH) {
-                    x = 0;
-                }
-            }
-            else if (d == DOWN) {
-                y = y + 1;
-                if (y >= HEIGHT) {
-                    y = 0;
-                }
-            }
-            else if (d == LEFT) {
-                x = x - 1;
-                if (x < 0) {
-                    x = WIDTH-1;
-                }
-            }
-            else {
-                cout << "ERROR! Unknown direction" << endl;
-            }
+            take_a_step(x,y,d);
         }
 
         monster_takes_a_step(monster_x, monster_y, x, y);
@@ -81,6 +56,47 @@ int main() {
     }
 
     return 0;
+}
+
+void turn_right(int& direction) {
+    direction = (direction + 1) % 4;
+}
+
+void turn_left(int& direction) {
+    direction = direction - 1;
+    if (direction < 0) {
+        direction = 3;
+    }
+}
+
+void take_a_step(int& x, int& y, int direction) {
+    if (direction == UP) {
+        y = y - 1;
+        if (y < 0) {
+            y = HEIGHT-1;
+        }
+    }
+    else if (direction == RIGHT) {
+        x = x + 1;
+        if (x >= WIDTH) {
+            x = 0;
+        }
+    }
+    else if (direction == DOWN) {
+        y = y + 1;
+        if (y >= HEIGHT) {
+            y = 0;
+        }
+    }
+    else if (direction == LEFT) {
+        x = x - 1;
+        if (x < 0) {
+            x = WIDTH-1;
+        }
+    }
+    else {
+        cout << "ERROR! Unknown direction" << endl;
+    }
 }
 
 void monster_takes_a_step(int& monster_x, int& monster_y, int x, int y) {
