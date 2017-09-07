@@ -62,10 +62,8 @@ int main() {
             }
         }
 
-        // MOVE MONSTER
         monster_takes_a_step(monster_x, monster_y, x, y);
 
-        // PRINT
         print_board(x,y,d,monster_x, monster_y, TREASURE_X, TREASURE_Y, caught_by_monster, treasure_found);
 
         if (caught_by_monster) {
