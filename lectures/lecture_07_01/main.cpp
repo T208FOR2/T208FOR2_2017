@@ -20,18 +20,15 @@ int main()
         exit(1);
     }
 
-    while (theinputfile >> x) {
-        sum += x;
-        n++;
+    while (theinputfile >> current_word) {
+        if (current_word == KEY_WORD) {
+            n++;
+        }
     }
 
     theinputfile.close();
 
-
-    cout << "The last number is: " << x << endl;
-    cout << "The sum is: " << sum << endl;
-    cout << "The number of numbers is: " << n << endl;
-    cout << "The average is: " << static_cast<double>(sum) / n << endl;
+    cout << "The word \"" << KEY_WORD << "\" appears " << n << " times." << endl;
 
     return 0;
 }
