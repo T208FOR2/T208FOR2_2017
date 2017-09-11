@@ -11,6 +11,7 @@ int main()
 {
     ifstream theinputfile;
     char current;
+    int n = 0;
 
     theinputfile.open("/Users/eyjo/Desktop/grimm.txt"); // MAC
 
@@ -19,8 +20,11 @@ int main()
         exit(1);
     }
 
-    current = theinputfile.get();
-    cout << current;
+    while ( !theinputfile.eof() && n < MAX_CHARS ) {
+        current = theinputfile.get();
+        cout << current;
+        n++;
+    }
 
     theinputfile.close();
 
