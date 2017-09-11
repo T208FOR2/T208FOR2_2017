@@ -1,16 +1,19 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <string>
 
 using namespace std;
+
+const string KEY_WORD = "apple";
 
 int main()
 {
     ifstream theinputfile;
-    int x, sum = 0, n = 0;
+    string current_word;
+    int n = 0;
 
-    theinputfile.open("/Users/eyjo/Desktop/randomtolur.txt"); // MAC
-//    theinputfile.open("c:\\Users\\eyjo\\Desktop\\randomtolur.txt");  // WINDOWS
+    theinputfile.open("/Users/eyjo/Desktop/grimm.txt"); // MAC
 
     if ( theinputfile.fail() ) {
         cout << "Could not open the file!" << endl;
@@ -23,6 +26,7 @@ int main()
     }
 
     theinputfile.close();
+
 
     cout << "The last number is: " << x << endl;
     cout << "The sum is: " << sum << endl;
