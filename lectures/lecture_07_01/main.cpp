@@ -16,6 +16,8 @@ int main()
 
     if (numbers_are_ok(a,b)) {
         cout << round_number(a,b) << endl;
+        cout << round_number_v2(a,b) << endl;
+        cout << round_number_v3(a,b) << endl;
     }
     else {
         cout << "Error" << endl;
@@ -37,6 +39,12 @@ int round_number(int a, int b) {
 
 int round_number_v2(int a, int b) {
     return ((a+b/2) / b) * b;
+}
+
+int round_number_v3(int a, int b) {
+    double d = static_cast<double>(a)/b;
+    int result = round(d) * b;
+    return result;
 }
 
 
