@@ -1,11 +1,13 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 
 void get_input(int& a, int& b);
 
 bool numbers_are_ok(int a, int b);
 int round_number(int a, int b);
+int round_number_v2(int a, int b);
+int round_number_v3(int a, int b);
 
 int main()
 {
@@ -32,6 +34,11 @@ int round_number(int a, int b) {
         return result;
     }
 }
+
+int round_number_v2(int a, int b) {
+    return ((a+b/2) / b) * b;
+}
+
 
 
 bool numbers_are_ok(int a, int b) {
