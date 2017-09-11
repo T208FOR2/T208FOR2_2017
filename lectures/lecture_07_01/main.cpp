@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -10,6 +11,11 @@ int main()
 
     theinputfile.open("/Users/eyjo/Desktop/randomtolur2.txt"); // MAC
 //    theinputfile.open("c:\\Users\\eyjo\\Desktop\\randomtolur.txt");  // WINDOWS
+
+    if ( theinputfile.fail() ) {
+        cout << "Could not open the file!" << endl;
+        exit(1);
+    }
 
     theinputfile >> x;
 
