@@ -1,34 +1,19 @@
 #include <iostream>
-#include <fstream>
-#include <cstdlib>
-#include <string>
 
 using namespace std;
 
-const int MAX_CHARS = 500;
+void get_input(int& a, int& b);
 
 int main()
 {
-    ifstream theinputfile;
-    char current;
-    int n = 0;
+    int a,b;
+    get_input(a,b);
 
-    theinputfile.open("/Users/eyjo/Desktop/grimm.txt"); // MAC
 
-    if ( theinputfile.fail() ) {
-        cout << "Could not open the file!" << endl;
-        exit(1);
-    }
-
-    while ( !theinputfile.eof() && n < MAX_CHARS ) {
-        current = theinputfile.get();
-        cout << current;
-        n++;
-    }
-
-    theinputfile.close();
-
-    cout << endl;
 
     return 0;
+}
+
+void get_input(int& a, int& b) {
+    cin >> a >> b;
 }
