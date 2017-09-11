@@ -9,7 +9,7 @@ int main()
     ifstream theinputfile;
     int x;
 
-    theinputfile.open("/Users/eyjo/Desktop/randomtolur2.txt"); // MAC
+    theinputfile.open("/Users/eyjo/Desktop/randomtolur.txt"); // MAC
 //    theinputfile.open("c:\\Users\\eyjo\\Desktop\\randomtolur.txt");  // WINDOWS
 
     if ( theinputfile.fail() ) {
