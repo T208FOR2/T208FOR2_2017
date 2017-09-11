@@ -5,13 +5,12 @@
 
 using namespace std;
 
-const string KEY_WORD = "apple";
+const int MAX_CHARS = 500;
 
 int main()
 {
     ifstream theinputfile;
-    string current_word;
-    int n = 0;
+    char current;
 
     theinputfile.open("/Users/eyjo/Desktop/grimm.txt"); // MAC
 
@@ -20,15 +19,12 @@ int main()
         exit(1);
     }
 
-    while (theinputfile >> current_word) {
-        if (current_word == KEY_WORD) {
-            n++;
-        }
-    }
+    current = theinputfile.get();
+    cout << current;
 
     theinputfile.close();
 
-    cout << "The word \"" << KEY_WORD << "\" appears " << n << " times." << endl;
+    cout << endl;
 
     return 0;
 }
