@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     ifstream theinputfile;
-    int x;
+    int x, sum = 0, n = 0;
 
     theinputfile.open("/Users/eyjo/Desktop/randomtolur.txt"); // MAC
 //    theinputfile.open("c:\\Users\\eyjo\\Desktop\\randomtolur.txt");  // WINDOWS
@@ -17,11 +17,17 @@ int main()
         exit(1);
     }
 
-    theinputfile >> x;
+    while (theinputfile >> x) {
+        sum += x;
+        n++;
+    }
 
     theinputfile.close();
 
-    cout << "The first number is: " << x << endl;
+    cout << "The last number is: " << x << endl;
+    cout << "The sum is: " << sum << endl;
+    cout << "The number of numbers is: " << n << endl;
+    cout << "The average is: " << sum / n << endl;
 
     return 0;
 }
