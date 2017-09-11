@@ -25,7 +25,7 @@ int main()
 int round_number(int a, int b) {
     int result = ((a) / b) * b;
     int remainder = a - result;
-    if (remainder > b/2) {
+    if (remainder >= b/2) {
         return result + b;
     }
     else {
