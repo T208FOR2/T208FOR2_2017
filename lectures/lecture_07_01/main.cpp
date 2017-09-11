@@ -27,7 +27,7 @@ int main()
     cout << "The last number is: " << x << endl;
     cout << "The sum is: " << sum << endl;
     cout << "The number of numbers is: " << n << endl;
-    cout << "The average is: " << sum / n << endl;
+    cout << "The average is: " << static_cast<double>(sum) / n << endl;
 
     return 0;
 }
