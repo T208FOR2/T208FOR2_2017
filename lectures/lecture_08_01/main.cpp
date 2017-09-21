@@ -7,6 +7,7 @@ int main()
     int tolur[10];
 
     for (int i = 0; i < 10; i++) {
+        cout << "Please write integer nr " << i+1 << ": " << endl;
         cin >> tolur[i];
     }
     cout << "----------------" << endl;
