@@ -15,6 +15,7 @@ int main()
     }
 
     cout << "------------------" << endl;
+    reverse_array(texti, N);
 
     for (int i = 0; i < N; i++) {
         cout << texti[i] << endl;
@@ -24,5 +25,7 @@ int main()
 }
 
 void reverse_array(string s[], int n) {
-
+    for (int i = 0; i < n; i++) {
+        s[i] = "Hi!";
+    }
 }
