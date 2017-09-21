@@ -13,9 +13,9 @@ int main()
     }
     cout << "----------------" << endl;
 
-    for (int i = N-1; i >= 0; i--) {
-        cout << tolur[i] << endl;
-    }
+    cout << tolur[0] << endl;
+
+    cout << tolur[1] << endl;
 
     return 0;
 }
