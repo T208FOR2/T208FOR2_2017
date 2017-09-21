@@ -30,5 +30,10 @@ void reverse_array(string s[], int n) {
         tmp = s[i];
         s[i] = s[n-i-1];
         s[n-i-1] = tmp;
+
+        for (int j = 0; j < n; j++) {
+            cout << s[i] << " ";
+        }
+        cout << endl;
     }
 }
