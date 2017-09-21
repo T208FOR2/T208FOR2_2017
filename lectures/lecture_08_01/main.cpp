@@ -17,5 +17,9 @@ int main()
 
     cout << tolur[1] << endl;
 
+    cout << tolur[8] << endl;
+
+    cout << tolur[586] << endl;
+
     return 0;
 }
