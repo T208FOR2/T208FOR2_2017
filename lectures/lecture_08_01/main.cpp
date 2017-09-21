@@ -13,6 +13,13 @@ int main()
         numbers[i] = 0.0;
     }
 
+    for (int i = 0; i < N; i++) {
+        cin >> numbers[i];
+    }
+    cout << "---------------------" << endl;
+    for (int i = 0; i < N; i++) {
+        cout << round_number( numbers[i] ) << endl;
+    }
 
     return 0;
 }
