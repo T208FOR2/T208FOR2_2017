@@ -19,7 +19,8 @@ int main()
 
     cout << tolur[8] << endl;
 
-    cout << tolur[586] << endl;
+    cout << tolur[10] << endl;  // WARNING!
+    cout << tolur[586] << endl;  // WARNING!
 
     return 0;
 }
