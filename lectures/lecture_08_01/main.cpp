@@ -6,10 +6,7 @@ const int N = 10;
 
 int main()
 {
-    int fjoldi;
-    cin >> fjoldi;
-
-    int tolur[fjoldi];  // BANNAD!!!
+    int tolur[N];
 
     for (int i = 0; i < N; i++) {
         cin >> tolur[i];
