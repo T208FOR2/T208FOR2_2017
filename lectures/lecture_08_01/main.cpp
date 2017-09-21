@@ -33,6 +33,10 @@ int main()
 
     theinputfile.close();
 
+    if (ekkert_fannst) {
+        cout << "Sorry, couldn't find anything matching " << braut << endl;
+    }
+
     return 0;
 }
 
