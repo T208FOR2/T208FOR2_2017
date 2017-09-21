@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int N = 4;
+const int N = 8;
 
 void reverse_array(string s[], int n);
 
@@ -32,7 +32,7 @@ void reverse_array(string s[], int n) {
         s[n-i-1] = tmp;
 
         for (int j = 0; j < n; j++) {
-            cout << s[i] << " ";
+            cout << s[j] << " ";
         }
         cout << endl;
     }
