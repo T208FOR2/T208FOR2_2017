@@ -1,5 +1,5 @@
 #include <iostream>
-#incluce <string>
+#include <string>
 #include <fstream>
 #include <cstdlib>
 
@@ -13,7 +13,7 @@ int main()
     ifstream theinputfile;
     theinputfile.open( thefilename.c_str() );
     if (theinputfile.fail()) {
-        cout << "Can't open the file: " << theinputfile << endl;
+        cout << "Can't open the file: " << thefilename << endl;
         exit(1);
     }
 
