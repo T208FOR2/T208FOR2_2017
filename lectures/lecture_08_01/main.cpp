@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int N = 10;
+const int N = 4;
 
 int round_number(double x);
 
