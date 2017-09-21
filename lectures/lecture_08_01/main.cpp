@@ -25,7 +25,10 @@ int main()
 }
 
 void reverse_array(string s[], int n) {
+    string tmp;
     for (int i = 0; i < n; i++) {
-        s[i] = "Hi!";
+        tmp = s[i];
+        s[i] = s[n-i-1];
+        s[n-i-1] = tmp;
     }
 }
