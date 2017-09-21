@@ -13,6 +13,7 @@ int main()
 
     string current_braut;
     int ar, karlar, konur;
+    bool ekkert_fannst = true;
 
     thefilename = "hr_bachelor.txt";
     cin >> braut;
@@ -28,6 +29,7 @@ int main()
     while (theinputfile >> current_braut && theinputfile >> ar && theinputfile >> karlar && theinputfile >> konur) {
         if (current_braut == braut) {
             cout << "Ar: " << ar << ", Fjoldi: " << karlar + konur << endl;
+            ekkert_fannst = false;
         }
     }
 
