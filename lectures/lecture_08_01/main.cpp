@@ -26,14 +26,9 @@ int main()
 
 void reverse_array(string s[], int n) {
     string tmp;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n/2; i++) {
         tmp = s[i];
         s[i] = s[n-i-1];
         s[n-i-1] = tmp;
-
-        for (int j = 0; j < n; j++) {
-            cout << s[j] << " ";
-        }
-        cout << endl;
     }
 }
