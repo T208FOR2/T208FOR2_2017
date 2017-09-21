@@ -27,7 +27,7 @@ int main()
 
     while (theinputfile >> current_braut && theinputfile >> ar && theinputfile >> karlar && theinputfile >> konur) {
         if (current_braut == braut) {
-            cout << "Ar: " << ar << " , Fjoldi: " << karlar + konur << endl;
+            cout << "Ar: " << ar << ", Fjoldi: " << karlar + konur << endl;
         }
     }
 
