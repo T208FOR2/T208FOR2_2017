@@ -9,14 +9,29 @@ void open_my_file(ifstream& theinputfile, string thefilename );
 
 int main()
 {
-    string thefilename;
-    cin >> thefilename;
+    string thefilename, braut;
+
+    string current_braut;
+    int ar, karlar, konur;
+
+    thefilename = "hr_bachelor.txt";
+    cin >> braut;
 
     ifstream theinputfile;
     open_my_file(theinputfile, thefilename);
 
+    // Get rid of the first line
+    for (int i = 0; i < 4; i++) {
+        theinputfile >> current_braut;
+    }
+
+    while (theinputfile >> current_braut && theinputfile >> ar && theinputfile >> karlar && theinputfile >> konur) {
+        if (current_braut == braut) {
+            cout << "Ar: " << ar << " , Fjoldi: " << karlar + konur << endl;
+        }
+    }
+
     theinputfile.close();
-    cout << "Thanks!" << endl;
 
     return 0;
 }
