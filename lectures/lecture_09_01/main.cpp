@@ -1,47 +1,102 @@
+// SEARCHING
 #include <iostream>
-
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
-const int NUM = 10;
+int const NUM = 1000000;
 
-int find_element(string s[], int n, string keyword);
+int const ITERATIONS = 100;
 
-int main() {
-    string texti[NUM], keyword = "";
+int sequentialSearch(int array[], int size, int find);
+int binarySearch(int array[], int size, int find);
 
-    for (int i = 0; i < NUM; i++) {
-        cin >> texti[i];
-    }
+int main()
+{
+  srand(static_cast<unsigned int>(time(NULL)));
+  int a[NUM];
+  int value, searchindex;
+  clock_t cstart, cend;
+  double seqtime = 0, bintime = 0;
 
-    cout << "What word are you looking for? ";
-    cin >> keyword;
-    while (keyword != "quit") {
+  cout << "Creating the array";
+  for (int i = 0; i < NUM; i++) {
+    a[i] = i;
+    if (i % 10000 == 0)
+      cout << ".";
+  }
 
-        int index = find_element(texti, NUM, keyword);
+  cout << "\nCalculating";
 
-        if (index >= 0) {
-            cout << "The word" << keyword << " is number ";
-            cout << index << " in the list" << endl;
-        }
-        else {
-            cout << "Sorry, couldn't find the word " << keyword << endl;
-        }
+  for (int i = 0; i < ITERATIONS; i++) {
+    value = rand() % NUM;
 
-        cout << "What word are you looking for? ";
-        cin >> keyword;
-    }
+    //Time the sequential search
+    cstart = clock();
 
+    searchindex = sequentialSearch(a, NUM, value);
 
-    return 0;
+    cend = clock();
+    seqtime += (cend - cstart) / static_cast<double> (CLOCKS_PER_SEC);
+
+    //Time the binary search
+    cstart = clock();
+
+    searchindex = binarySearch(a, NUM, value);
+
+    cend = clock();
+    bintime += (cend - cstart) / static_cast<double> (CLOCKS_PER_SEC);
+
+    cout << ".";
+  }
+  cout << endl;
+
+  cout.setf(ios::fixed);
+  cout << "\nRunning Time for " << ITERATIONS << " iterations: " << endl;
+  cout << "Sequential search over " << NUM << " elements: " << seqtime << endl;
+  cout << "Binary search over " << NUM << " elements:     " << bintime << endl << endl;
+
+  return 0;
 }
 
-int find_element(string s[], int n, string keyword) {
-    int index = -1;
-    for (int i = 0; i < n; i++) {
-        if (keyword == s[i]) {
-            index = i;
-            break;
-        }
+int sequentialSearch(int array[], int size, int find) {
+  int i = 0;
+  while (i < size) {
+    if (array[i] == find) {
+      return i;
     }
-    return index;
+    i++;
+  }
+
+  return -1;
 }
+
+int binarySearch(int array[], int size, int find) {
+  int low = 0, high = size-1;
+  int middle = (low + high)/2;
+
+  while (low < high) {
+    if (array[middle] < find)
+      low = middle + 1;
+    else if (array[middle] > find)
+      high = middle-1;
+    else
+      return middle;
+
+    middle = (low+high)/2;
+  }
+
+  return -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
