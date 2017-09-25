@@ -40,6 +40,7 @@ int find_element(string s[], int n, string keyword) {
     for (int i = 0; i < n; i++) {
         if (keyword == s[i]) {
             index = i;
+            break;
         }
     }
     return index;
