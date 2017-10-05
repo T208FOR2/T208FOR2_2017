@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -7,6 +9,7 @@ const int NUM = 1000;
 
 string getnexthashtag(string inputline, unsigned int& pos);
 int indexofhashtag(string hashtags[], int n, string h);
+string stringtolower(string s);
 
 int main()
 {
