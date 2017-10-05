@@ -7,7 +7,8 @@ string getnexthashtag(string inputline, unsigned int& pos);
 int main()
 {
     unsigned int pos = 0;
-    string inputline = "Something #One, #Two #Three#Four...#Five and something";
+//    string inputline = "Something #One, #Two #Three#Four...#Five and something";
+    string inputline = "This is a line withouth hashtags.";
 
     cout << getnexthashtag(inputline, pos) << endl;
 
