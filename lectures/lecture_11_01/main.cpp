@@ -13,6 +13,8 @@ string stringtolower(string s);
 
 void insertorupdatehashtags(string hashtags[], int hashtags_counter[], int& used_n, string h);
 
+void insertionSort(string array[], int length);
+
 int main()
 {
     unsigned int pos = 0;
@@ -38,18 +40,18 @@ int main()
     return 0;
 }
 
-void insertionSort(string array[], int length) {
+void insertionSort(string sarray[], int iarray[], int length) {
   int i, j;
   string tmp;
 
   for (i = 1; i < length; i++) {
-    tmp = array[i];
+    tmp = sarray[i];
     j = i;
-    while (j > 0 && array[j - 1] > tmp) {
-      array[j] = array[j - 1];
+    while (j > 0 && sarray[j - 1] > tmp) {
+      sarray[j] = sarray[j - 1];
       j--;
     }
-    array[j] = tmp;
+    sarray[j] = tmp;
   }
 }
 
