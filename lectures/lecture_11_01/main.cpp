@@ -32,8 +32,8 @@ int main()
         h = getnexthashtag(inputline, pos);
     }
 
-    insertionSort_int_dec(hashtags, hashtags_counter, used_n);
     insertionSort_string_asc(hashtags, hashtags_counter, used_n);
+    insertionSort_int_dec(hashtags, hashtags_counter, used_n);
 
     for (int i = 0; i < used_n; i++) {
         cout << hashtags[i] << " - x" << hashtags_counter[i] << endl;
