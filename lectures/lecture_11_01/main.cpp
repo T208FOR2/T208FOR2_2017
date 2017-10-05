@@ -6,6 +6,7 @@ const string NOHASHTAGFOUND = "No hashtag found";
 const int NUM = 1000;
 
 string getnexthashtag(string inputline, unsigned int& pos);
+int indexofhashtag(string hashtags[], int n, string h);
 
 int main()
 {
@@ -18,6 +19,7 @@ int main()
 
     h = getnexthashtag(inputline, pos);
     while (h != NOHASHTAGFOUND) {
+
         hashtags[used_n] = h;
         used_n = used_n + 1;
 
@@ -30,6 +32,18 @@ int main()
 
     return 0;
 }
+
+int indexofhashtag(string hashtags[], int n, string h) {
+    for (int i = 0; i < n; i++) {
+        if (hashtags[i] == h) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+
 
 string getnexthashtag(string inputline, unsigned int& pos) {
     unsigned int hashstart, hashend;
