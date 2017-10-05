@@ -14,6 +14,7 @@ string stringtolower(string s);
 void insertorupdatehashtags(string hashtags[], int hashtags_counter[], int& used_n, string h);
 
 void insertionSort(string sarray[], int iarray[], int length);
+void insertionSort_v2(string sarray[], int iarray[], int length);
 
 int main()
 {
@@ -38,6 +39,25 @@ int main()
     }
 
     return 0;
+}
+
+void insertionSort_v2(string sarray[], int iarray[], int length) {
+  int i, j;
+  string stmp;
+  int itmp;
+
+  for (i = 1; i < length; i++) {
+    stmp = sarray[i];
+    itmp = iarray[i];
+    j = i;
+    while (j > 0 && iarray[j - 1] > itmp) {
+      sarray[j] = sarray[j - 1];
+      iarray[j] = iarray[j - 1];
+      j--;
+    }
+    sarray[j] = stmp;
+    iarray[j] = itmp;
+  }
 }
 
 void insertionSort(string sarray[], int iarray[], int length) {
