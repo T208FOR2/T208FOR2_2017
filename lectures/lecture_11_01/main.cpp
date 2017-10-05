@@ -8,7 +8,7 @@ int main()
     string inputline = "Something #One, #Two #Three#Four...#Five and something";
 
     hashstart = inputline.find("#");
-    hashend =
+    hashend = inputline.find_first_not_of("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", hashstart+1);
     cout << inputline << endl;
     cout << pos << endl;
 
