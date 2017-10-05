@@ -2,16 +2,21 @@
 
 using namespace std;
 
+string getnexthashtag(string inputline, unsigned int& pos);
+
 int main()
 {
-    unsigned int hashstart, hashend;
+    unsigned int pos = 0;
     string inputline = "Something #One, #Two #Three#Four...#Five and something";
 
-    hashstart = inputline.find("#", 14);
-    hashend = inputline.find_first_not_of("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", hashstart+1);
-
-    cout << inputline << endl;
-    cout << "\"" << inputline.substr(hashstart+1, hashend - hashstart-1) << "\"" << endl;
+    cout << getnexthashtag(inputline, pos);
 
     return 0;
+}
+
+string getnexthashtag(string inputline, unsigned int& pos) {
+    unsigned int hashstart, hashend;
+    hashstart = inputline.find("#", pos);
+    hashend = inputline.find_first_not_of("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", hashstart+1);
+    return inputline.substr(hashstart, hashend - hashstart);
 }
