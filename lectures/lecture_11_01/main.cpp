@@ -38,13 +38,19 @@ int main()
 
 int indexofhashtag(string hashtags[], int n, string h) {
     for (int i = 0; i < n; i++) {
-        if (hashtags[i] == h) {
+        if (stringtolower(hashtags[i]) == stringtolower(h)) {
             return i;
         }
     }
     return -1;
 }
 
+string stringtolower(string s) {
+    for (unsigned int i = 0; i < s.length(); i++) {
+        s[i] = tolower(s[i]);
+    }
+    return s;
+}
 
 
 
