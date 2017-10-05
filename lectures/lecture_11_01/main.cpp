@@ -23,15 +23,6 @@ int main()
 
     h = getnexthashtag(inputline, pos);
     while (h != NOHASHTAGFOUND) {
-        index = indexofhashtag(hashtags, used_n, h);
-        if (index == -1) {
-            hashtags[used_n] = h;
-            hashtags_counter[used_n] = 1;
-            used_n = used_n + 1;
-        }
-        else {
-            hashtags_counter[index] += 1;
-        }
 
         h = getnexthashtag(inputline, pos);
     }
@@ -41,6 +32,18 @@ int main()
     }
 
     return 0;
+}
+
+void insertorupdatehashtags(string hashtags[], int& used_n, string h) {
+    int index = indexofhashtag(hashtags, used_n, h);
+    if (index == -1) {
+        hashtags[used_n] = h;
+        hashtags_counter[used_n] = 1;
+        used_n = used_n + 1;
+    }
+    else {
+        hashtags_counter[index] += 1;
+    }
 }
 
 int indexofhashtag(string hashtags[], int n, string h) {
