@@ -37,6 +37,7 @@ int main()
 
     while (!inputfile.eof()) {
         getline(inputfile, inputline);
+        pos = 0;
 
         h = getnexthashtag(inputline, pos);
         while (h != NOHASHTAGFOUND) {
@@ -47,8 +48,12 @@ int main()
 
     inputfile.close();
 
+
     insertionSort_string_asc(hashtags, hashtags_counter, used_n);
     insertionSort_int_dec(hashtags, hashtags_counter, used_n);
+
+    cout << used_n << endl;
+    return 0;
 
     for (int i = 0; i < used_n; i++) {
 
