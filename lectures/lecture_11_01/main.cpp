@@ -26,7 +26,6 @@ int main()
     h = getnexthashtag(inputline, pos);
     while (h != NOHASHTAGFOUND) {
         insertorupdatehashtags(hashtags, hashtags_counter, used_n, h);
-
         h = getnexthashtag(inputline, pos);
     }
 
