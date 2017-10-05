@@ -3,6 +3,7 @@
 using namespace std;
 
 const string NOHASHTAGFOUND = "No hashtag found";
+const int NUM = 1000;
 
 string getnexthashtag(string inputline, unsigned int& pos);
 
@@ -12,11 +13,13 @@ int main()
     string inputline = "Something #One, #Two, #two, #TWO #Three#Four...#Five and something";
 //    string inputline = "This is a line withouth hashtags.";
     string h;
-
+    string hashtags[NUM];
 
     h = getnexthashtag(inputline, pos);
     while (h != NOHASHTAGFOUND) {
-        cout << h << endl;
+
+
+
         h = getnexthashtag(inputline, pos);
     }
 
