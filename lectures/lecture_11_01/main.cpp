@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
@@ -20,18 +22,30 @@ void insertionSort_int_dec(string sarray[], int iarray[], int length);
 int main()
 {
     unsigned int pos = 0;
-    string inputline = "Something #One, #Two, #two, #TWO #Three#Four...#Five and something";
-//    string inputline = "This is a line withouth hashtags.";
+    string inputline;
     string h;
     string hashtags[NUM];
     int hashtags_counter[NUM];
     int used_n = 0;
 
-    h = getnexthashtag(inputline, pos);
-    while (h != NOHASHTAGFOUND) {
-        insertorupdatehashtags(hashtags, hashtags_counter, used_n, h);
-        h = getnexthashtag(inputline, pos);
+    ifstream inputfile;
+    inputfile.open("/Users/Eyjo/Documents/Kennsla/Forritun/T208FOR2_03_2017/trump_twitter.txt");
+    if (inputfile.fail()) {
+        cout << "FAIL!" << endl;
+        exit(1);
     }
+
+    while (!inputfile.eof()) {
+        getline(inputfile, inputline);
+
+        h = getnexthashtag(inputline, pos);
+        while (h != NOHASHTAGFOUND) {
+            insertorupdatehashtags(hashtags, hashtags_counter, used_n, h);
+            h = getnexthashtag(inputline, pos);
+        }
+    }
+
+    inputfile.close();
 
     insertionSort_string_asc(hashtags, hashtags_counter, used_n);
     insertionSort_int_dec(hashtags, hashtags_counter, used_n);
