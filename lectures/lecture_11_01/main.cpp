@@ -4,10 +4,11 @@ using namespace std;
 
 int main()
 {
-    unsigned int pos;
-    string inputline = " VIDEO: Elements of the #DoD and @FEMA are providing humanitarian relief for #PuertoRico and #USVI.";
+    unsigned int hashstart, hashend;
+    string inputline = "Something #One, #Two #Three#Four...#Five and something";
 
-    pos = inputline.find("#");
+    hashstart = inputline.find("#");
+    hashend =
     cout << inputline << endl;
     cout << pos << endl;
 
