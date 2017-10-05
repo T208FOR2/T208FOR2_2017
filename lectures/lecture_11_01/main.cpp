@@ -8,7 +8,8 @@ using namespace std;
 
 const string NOHASHTAGFOUND = "No hashtag found";
 const int NUM = 1000;
-const int WHITESPACE = 20;
+const int WHITESPACE = 40;
+const int TOPLIMIT = 20;
 
 string getnexthashtag(string inputline, unsigned int& pos);
 int indexofhashtag(string hashtags[], int n, string h);
@@ -52,10 +53,7 @@ int main()
     insertionSort_string_asc(hashtags, hashtags_counter, used_n);
     insertionSort_int_dec(hashtags, hashtags_counter, used_n);
 
-    cout << used_n << endl;
-    return 0;
-
-    for (int i = 0; i < used_n; i++) {
+    for (int i = 0; i < TOPLIMIT; i++) {
 
         cout << hashtags[i];
         for (unsigned int j = 0; j < WHITESPACE - hashtags[i].length(); j++) {
