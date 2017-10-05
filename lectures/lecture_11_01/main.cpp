@@ -13,8 +13,8 @@ string stringtolower(string s);
 
 void insertorupdatehashtags(string hashtags[], int hashtags_counter[], int& used_n, string h);
 
-void insertionSort(string sarray[], int iarray[], int length);
-void insertionSort_v2(string sarray[], int iarray[], int length);
+void insertionSort_string_asc(string sarray[], int iarray[], int length);
+void insertionSort_int_dec(string sarray[], int iarray[], int length);
 
 int main()
 {
@@ -32,7 +32,8 @@ int main()
         h = getnexthashtag(inputline, pos);
     }
 
-    insertionSort(hashtags, hashtags_counter, used_n);
+    insertionSort_int_dec(hashtags, hashtags_counter, used_n);
+    insertionSort_string_asc(hashtags, hashtags_counter, used_n);
 
     for (int i = 0; i < used_n; i++) {
         cout << hashtags[i] << " - x" << hashtags_counter[i] << endl;
@@ -41,7 +42,7 @@ int main()
     return 0;
 }
 
-void insertionSort_v2(string sarray[], int iarray[], int length) {
+void insertionSort_int_dec(string sarray[], int iarray[], int length) {
   int i, j;
   string stmp;
   int itmp;
@@ -50,7 +51,7 @@ void insertionSort_v2(string sarray[], int iarray[], int length) {
     stmp = sarray[i];
     itmp = iarray[i];
     j = i;
-    while (j > 0 && iarray[j - 1] > itmp) {
+    while (j > 0 && iarray[j - 1] < itmp) {
       sarray[j] = sarray[j - 1];
       iarray[j] = iarray[j - 1];
       j--;
@@ -60,7 +61,7 @@ void insertionSort_v2(string sarray[], int iarray[], int length) {
   }
 }
 
-void insertionSort(string sarray[], int iarray[], int length) {
+void insertionSort_string_asc(string sarray[], int iarray[], int length) {
   int i, j;
   string stmp;
   int itmp;
