@@ -18,6 +18,7 @@ int main()
 //    string inputline = "This is a line withouth hashtags.";
     string h;
     string hashtags[NUM];
+    int hashtags_counter[NUM];
     int used_n = 0, index;
 
     h = getnexthashtag(inputline, pos);
@@ -25,17 +26,18 @@ int main()
         index = indexofhashtag(hashtags, used_n, h);
         if (index == -1) {
             hashtags[used_n] = h;
+            hashtags_counter[used_n] = 1;
             used_n = used_n + 1;
         }
         else {
-            // nothing yet...
+            hashtags_counter[index] += 1;
         }
 
         h = getnexthashtag(inputline, pos);
     }
 
     for (int i = 0; i < used_n; i++) {
-        cout << hashtags[i] << endl;
+        cout << hashtags[i] << " - x" << hashtags_counter[i] << endl;
     }
 
     return 0;
