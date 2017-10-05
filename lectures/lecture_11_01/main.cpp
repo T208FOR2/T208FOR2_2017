@@ -2,6 +2,8 @@
 
 using namespace std;
 
+const string NOHASHTAGFOUND = "No hashtag found";
+
 string getnexthashtag(string inputline, unsigned int& pos);
 
 int main()
@@ -18,7 +20,12 @@ int main()
 string getnexthashtag(string inputline, unsigned int& pos) {
     unsigned int hashstart, hashend;
     hashstart = inputline.find("#", pos);
-    pos = hashstart+1;
-    hashend = inputline.find_first_not_of("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", hashstart+1);
-    return inputline.substr(hashstart, hashend - hashstart);
+    if (hashstart < inputline.length()) {
+        pos = hashstart+1;
+        hashend = inputline.find_first_not_of("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", hashstart+1);
+        return inputline.substr(hashstart, hashend - hashstart);
+    }
+    else {
+        return NOHASHTAGFOUND;
+    }
 }
