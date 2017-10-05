@@ -29,11 +29,28 @@ int main()
         h = getnexthashtag(inputline, pos);
     }
 
+    insertionSort(hashtags, used_n);
+
     for (int i = 0; i < used_n; i++) {
         cout << hashtags[i] << " - x" << hashtags_counter[i] << endl;
     }
 
     return 0;
+}
+
+void insertionSort(string array[], int length) {
+  int i, j;
+  string tmp;
+
+  for (i = 1; i < length; i++) {
+    tmp = array[i];
+    j = i;
+    while (j > 0 && array[j - 1] > tmp) {
+      array[j] = array[j - 1];
+      j--;
+    }
+    array[j] = tmp;
+  }
 }
 
 void insertorupdatehashtags(string hashtags[], int hashtags_counter[], int& used_n, string h) {
