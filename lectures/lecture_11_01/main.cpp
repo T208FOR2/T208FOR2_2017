@@ -11,7 +11,7 @@ int main()
     hashend = inputline.find_first_not_of("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", hashstart+1);
 
     cout << inputline << endl;
-    cout << "\"" << inputline.substr(hashstart, hashend - hashstart) << "\"" << endl;
+    cout << "\"" << inputline.substr(hashstart+1, hashend - hashstart-1) << "\"" << endl;
 
     return 0;
 }
