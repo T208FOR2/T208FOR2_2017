@@ -14,15 +14,19 @@ int main()
 //    string inputline = "This is a line withouth hashtags.";
     string h;
     string hashtags[NUM];
+    int used_n = 0;
 
     h = getnexthashtag(inputline, pos);
     while (h != NOHASHTAGFOUND) {
-
-
+        hashtags[used_n] = h;
+        used_n = used_n + 1;
 
         h = getnexthashtag(inputline, pos);
     }
 
+    for (int i = 0; i < used_n; i++) {
+        cout << hashtags[i] << endl;
+    }
 
     return 0;
 }
