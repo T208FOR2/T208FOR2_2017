@@ -18,13 +18,18 @@ int main()
 //    string inputline = "This is a line withouth hashtags.";
     string h;
     string hashtags[NUM];
-    int used_n = 0;
+    int used_n = 0, index;
 
     h = getnexthashtag(inputline, pos);
     while (h != NOHASHTAGFOUND) {
-
-        hashtags[used_n] = h;
-        used_n = used_n + 1;
+        index = indexofhashtag(hashtags, used_n, h);
+        if (index == -1) {
+            hashtags[used_n] = h;
+            used_n = used_n + 1;
+        }
+        else {
+            // nothing yet...
+        }
 
         h = getnexthashtag(inputline, pos);
     }
