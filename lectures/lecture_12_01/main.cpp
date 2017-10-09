@@ -6,18 +6,17 @@ const int NUM = 100;
 
 int main()
 {
-    int n;
+    int n, sum = 0;
     int fylki[NUM];
 
     cin >> n;
 
     for (int i = 0; i < n; i++) {
         cin >> fylki[i];
+        sum += fylki[i];
     }
 
-    for (int i = 0; i < n; i++) {
-        cout << fylki[i] << endl;
-    }
+    cout << "The average " << static_cast<double>(sum)/n << endl;
 
     return 0;
 }
