@@ -15,7 +15,9 @@ int main()
         cin >> fylki[i];
     }
 
-    cout << fylki << endl;
+    for (int i = 0; i < n; i++) {
+        cout << fylki[i] << endl;
+    }
 
     return 0;
 }
