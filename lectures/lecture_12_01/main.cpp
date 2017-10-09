@@ -19,6 +19,13 @@ int main()
         result = result + a[i] + b[i];
     }
 
+    for (unsigned int i = shorter_length; i < a.length(); i++) {
+        result = result + a[i];
+    }
+    for (unsigned int i = shorter_length; i < b.length(); i++) {
+        result = result + b[i];
+    }
+
     cout << result << endl;
 
     return 0;
