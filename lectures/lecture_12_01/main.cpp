@@ -10,7 +10,7 @@ int main()
 
     cin >> shift >> texti;
 
-    texti = texti.substr(1, texti.length());
+    texti = texti.substr(0, texti.length()-1);
 
     cout << texti << endl;
 
