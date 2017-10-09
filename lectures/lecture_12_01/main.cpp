@@ -4,7 +4,7 @@
 using namespace std;
 
 string shift_by_one(string texti);
-string shift_by_minus_one(string texti)
+string shift_by_minus_one(string texti);
 
 int main()
 {
