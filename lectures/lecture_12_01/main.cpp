@@ -12,7 +12,9 @@ int main()
 
     cin >> shift >> texti;
 
-    texti = shift_by_one(texti);
+    for (int i = 0; i < shift; i++) {
+        texti = shift_by_one(texti);
+    }
 
     cout << texti << endl;
 
