@@ -9,18 +9,22 @@ int main()
 {
     string a,b;
     unsigned int shorter_length;
+    string result = "";
 
     cin >> a >> b;
 
     shorter_length = minvalue(a.length(), b.length());
 
+    for (unsigned int i = 0; i < shorter_length; i++) {
+        result = result + a[i] + b[i];
+    }
 
-
+    cout << result << endl;
 
     return 0;
 }
 
-int minvalue(int x, int y) {
+unsigned int minvalue(unsigned int x, unsigned int y) {
     if (x < y) {
         return x;
     }
