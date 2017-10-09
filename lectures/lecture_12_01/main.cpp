@@ -26,7 +26,7 @@ int main()
     if (word_appears) {
         cout << "The word appears";
         if (word_appears_multiple_times) {
-            cout << " multiple times"
+            cout << " multiple times";
         }
         cout << "." << endl;
     }
