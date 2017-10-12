@@ -12,6 +12,17 @@ int main() {
         p[n] = tala;
         n++;
 
+        if (n == thesize) {
+            cout << "RESIZE!!!" << endl;
+            int *q = new int[thesize*2];
+            for (int i = 0; i < n; i++) {
+                q[i] = p[i];
+            }
+            delete [] p;
+            p = q;
+            thesize = thesize*2;
+        }
+
         cin >> tala;
     }
 
