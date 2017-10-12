@@ -3,21 +3,19 @@
 using namespace std;
 
 int main() {
-    int n;
-    int *p, *q;
+    int thesize = 2, n = 0;
+    int *p = new int[thesize];
 
-    cin >> n;
+    int tala;
+    cin >> tala;
+    while (tala >= 0) {
+        // Setja inn i fylkid p...
 
-    p = new int[n];
-    q = p;
-
-    for (int i = 0; i < n; i++) {
-        p[i] = i*i;
+        cin >> tala;
     }
 
     for (int i = 0; i < n; i++) {
-        cout << *q << " ";
-        q = q + 1;
+        cout << p[i] << " ";
     }
     cout << endl;
 
