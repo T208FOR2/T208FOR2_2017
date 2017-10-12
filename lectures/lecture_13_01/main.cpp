@@ -1,23 +1,25 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main() {
     int n;
+    int *p;
+
     cin >> n;
-    string *s = new string[n];
+
+    p = new int[n];
 
     for (int i = 0; i < n; i++) {
-        cin >> s[i];
-    }
-    for (int i = n-1; i >= 0; i--) {
-        cout << s[i] << endl;
+        p[i] = i*i;
     }
 
+    for (int i = 0; i < n; i++) {
+        cout << p[i] << " ";
+    }
+    cout << endl;
 
-    delete [] s;
-
+    delete [] p;
     return 0;
 }
 
