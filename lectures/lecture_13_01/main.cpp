@@ -9,7 +9,8 @@ int main() {
     int tala;
     cin >> tala;
     while (tala >= 0) {
-        // Setja inn i fylkid p...
+        p[n] = tala;
+        n++;
 
         cin >> tala;
     }
