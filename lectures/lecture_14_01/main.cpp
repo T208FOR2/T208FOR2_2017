@@ -4,6 +4,7 @@
 using namespace std;
 
 void mirror_v1(string *fylki, int fjoldi);
+void mirror_v2(string* &fylki, int fjoldi);
 
 int main()
 {
@@ -29,6 +30,11 @@ int main()
 
     return 0;
 }
+
+void mirror_v2(string* &fylki, int fjoldi) {
+    //
+}
+
 
 void mirror_v1(string *fylki, int fjoldi) {
     string tmp;
