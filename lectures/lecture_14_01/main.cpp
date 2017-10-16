@@ -26,6 +26,14 @@ int main()
     }
     cout << endl;
 
+    mirror_v2(s, n);
+
+    for (int i = 0; i < n; i++) {
+        cout << s[i] << " ";
+    }
+    cout << endl;
+
+
     delete [] s;
 
     return 0;
