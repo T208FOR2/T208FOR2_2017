@@ -2,18 +2,18 @@
 
 using namespace std;
 
-void transpose_2d_array(int **&a, int& rows, int& columns);
 int** create_2d_array(int& rows, int& columns);
 void delete_2d_array(int** a, int rows);
+
+void transpose_2d_array(int **&a, int& rows, int& columns);
+
+void swap_values(int& a, int& b);
 
 int main() {
     int rows, columns;
     cin >> rows >> columns;
 
-    int **p = new int*[rows];
-    for (int i = 0; i < rows; i++) {
-        p[i] = new int[columns];
-    }
+    int **p = create_2d_array(rows, columns);
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
@@ -68,19 +68,23 @@ void delete_2d_array(int **a, int rows) {
 }
 
 void transpose_2d_array(int **&a, int& rows, int& columns) {
-    int **p_bylt = create_2d_array(columns, rows);
+    int **a_bylt = create_2d_array(columns, rows);
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
-            p_bylt[j][i] = a[i][j];
+            a_bylt[j][i] = a[i][j];
         }
     }
 
-    delete_2d_array(p, rows);
+    delete_2d_array(a, rows);
 
-    p = p_bylt;
+    a = a_bylt;
 
-    int tmp = rows;
-    rows = columns;
-    columns = tmp;
+    swap_values(rows, columns);
+}
+
+void swap_values(int& x, int& y) {
+    int tmp = x;
+    x = y;
+    y = tmp;
 }
