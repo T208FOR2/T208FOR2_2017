@@ -2,19 +2,9 @@
 
 using namespace std;
 
+void transpose_2d_array(int **&a, int& rows, int& columns);
+
 int main() {
-    int *x = NULL;
-
-    for (int i = 0; i < 0x223234; i++) {
-        x++;
-    }
-
-    cout << x << endl;
-    cout << *x << endl;
-
-    return 0;
-
-
     int rows, columns;
     cin >> rows >> columns;
 
@@ -77,4 +67,22 @@ int main() {
     delete [] p;
 
     return 0;
+}
+
+void create_2d_array(int** &a, int& rows, int& columns) {
+    a = new int*[rows];
+    for (int i = 0; i < rows; i++) {
+        a[i] = new int[columns];
+    }
+}
+
+void delete_2d_array(int **a, int rows) {
+    for (int i = 0; i < rows; i++) {
+        delete [] a[i];
+    }
+    delete [] a;
+}
+
+void transpose_2d_array(int **&a, int& rows, int& columns) {
+
 }
