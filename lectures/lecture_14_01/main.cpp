@@ -32,7 +32,15 @@ int main()
 }
 
 void mirror_v2(string* &fylki, int fjoldi) {
-    //
+    string *tmp_fylki = new string[fjoldi];
+
+    for (int i = 0; i < fjoldi; i++) {
+        tmp_fylki[fjoldi - i - 1] = fylki[i];
+    }
+
+    delete [] fylki;
+
+    fylki = tmp_fylki;
 }
 
 
