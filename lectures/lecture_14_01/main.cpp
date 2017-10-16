@@ -3,8 +3,14 @@
 using namespace std;
 
 int main() {
-    int *p = NULL;
-    cout << p << endl;
+    int *x = NULL;
+
+    for (int i = 0; i < 0x223234; i++) {
+        x++;
+    }
+
+    cout << x << endl;
+    cout << *x << endl;
 
     return 0;
 
