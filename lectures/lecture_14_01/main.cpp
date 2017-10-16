@@ -4,6 +4,8 @@ using namespace std;
 
 int** create_2d_array(int& rows, int& columns);
 void delete_2d_array(int** a, int rows);
+
+void read_2d_array(int** a, int rows, int columns);
 void print_2d_array(int** a, int rows, int columns);
 
 void transpose_2d_array(int **&a, int& rows, int& columns);
@@ -15,15 +17,12 @@ int main() {
     cin >> rows >> columns;
 
     int **p = create_2d_array(rows, columns);
-
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
-            cin >> p[i][j];
-        }
-    }
+    read_2d_array(p, rows, columns);
 
     cout << "-------------------" << endl;
+
     print_2d_array(p, rows, columns);
+
     cout << "-------------------" << endl;
 
     transpose_2d_array(p, rows, columns);
@@ -34,6 +33,14 @@ int main() {
     delete_2d_array(p, rows);
 
     return 0;
+}
+
+void read_2d_array(int** a, int rows, int columns) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            cin >> a[i][j];
+        }
+    }
 }
 
 void print_2d_array(int** a, int rows, int columns) {
@@ -71,9 +78,8 @@ void transpose_2d_array(int **&a, int& rows, int& columns) {
 
     delete_2d_array(a, rows);
 
-    a = a_bylt;
-
     swap_values(rows, columns);
+    a = a_bylt;
 }
 
 void swap_values(int& x, int& y) {
