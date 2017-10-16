@@ -6,7 +6,8 @@ int main() {
     int rows, columns;
     cin >> rows >> columns;
 
-    int **p;
+    int **p = new int*[rows];
+
 
 
     return 0;
