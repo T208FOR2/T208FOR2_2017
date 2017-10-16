@@ -24,6 +24,10 @@ int main() {
         cout << endl;
     }
 
+    for (int i = 0; i < rows; i++) {
+        delete [] p[i];
+    }
+    delete [] p;
 
     return 0;
 }
