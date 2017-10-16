@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int n, m = 0;
+    int n, m = 0, k = 0;
     int *p, *q;
     cin >> n;
     p = new int[n];
@@ -15,8 +15,12 @@ int main() {
 
     q = new int[m];
 
-
-
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < p[i]; j++) {
+            q[k] = p[i];
+            k++;
+        }
+    }
 
     for (int i = 0; i < m; i++) {
         cout << q[i] << " ";
