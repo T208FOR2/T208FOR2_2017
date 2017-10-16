@@ -4,6 +4,7 @@ using namespace std;
 
 int** create_2d_array(int& rows, int& columns);
 void delete_2d_array(int** a, int rows);
+void print_2d_array(int** a, int rows, int columns);
 
 void transpose_2d_array(int **&a, int& rows, int& columns);
 
@@ -22,34 +23,26 @@ int main() {
     }
 
     cout << "-------------------" << endl;
+    print_2d_array(p, rows, columns);
+    cout << "-------------------" << endl;
 
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
-            cout << p[i][j] << " ";
-        }
-        cout << endl;
-    }
+    transpose_2d_array(p, rows, columns);
+    print_2d_array(p, rows, columns);
 
     cout << "-------------------" << endl;
 
-
-
-
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
-            cout << p[i][j] << " ";
-        }
-        cout << endl;
-    }
-
-    cout << "-------------------" << endl;
-
-    for (int i = 0; i < rows; i++) {
-        delete [] p[i];
-    }
-    delete [] p;
+    delete_2d_array(p, rows);
 
     return 0;
+}
+
+void print_2d_array(int** a, int rows, int columns) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
 
 int** create_2d_array(int& rows, int& columns) {
