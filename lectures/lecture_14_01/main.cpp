@@ -17,6 +17,13 @@ int main() {
         }
     }
 
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            cout << p[i][j] << " ";
+        }
+        cout << endl;
+    }
+
 
     return 0;
 }
