@@ -28,6 +28,14 @@ int main() {
 
     cout << "-------------------" << endl;
 
+    int **p_bylt = new int*[columns];
+    for (int j = 0; j < columns; j++) {
+        p_bylt[j] = new int[rows];
+    }
+
+
+
+
     for (int i = 0; i < rows; i++) {
         delete [] p[i];
     }
