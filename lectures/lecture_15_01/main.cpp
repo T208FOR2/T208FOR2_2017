@@ -12,6 +12,7 @@ class Namskeid {
 class Student {
     public:
         Student();
+        Student(string n, string h, int ar);
 
         string nafn;
         string heimilisfang;
@@ -54,6 +55,16 @@ int main()
 
     return 0;
 }
+
+Student::Student(string n, string h, int ar) {
+    nafn = n;
+    heimilisfang = h;
+    faedingarar = ar;
+
+    Namskeid tomt = {"no course"};
+    uppahaldsfag = tomt;
+}
+
 
 Student::Student() {
     cout << "I'M THE CONSTRUCTOR!!!" << endl;
