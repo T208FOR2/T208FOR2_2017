@@ -7,12 +7,13 @@ struct Namskeid {
     string nafn;
 };
 
-struct Student {
-    string nafn;
-    int faedingarar;
-    string heimilisfang;
+class Student {
+    public:
+        string nafn;
+        int faedingarar;
+        string heimilisfang;
 
-    Namskeid uppahaldsfag;
+        Namskeid uppahaldsfag;
 };
 
 
