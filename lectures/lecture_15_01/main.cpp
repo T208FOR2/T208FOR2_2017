@@ -36,7 +36,7 @@ int main()
     n1.nafn = "Forritun";
     n2.nafn = "Staerdfraedi";
 
-    Student s1,s2,s3;
+    Student s1,s2,s3, s4("John", "101 Broadway", 1999);
 
     s1.nafn = "Jon";
     s1.set_faedingarar(1992);
@@ -51,12 +51,15 @@ int main()
     s1.prenta();
     s2.prenta();
     s3.prenta();
+    s4.prenta();
 
 
     return 0;
 }
 
 Student::Student(string n, string h, int ar) {
+    cout << "I'M THE OTHER CONSTRUCTOR!!!" << endl;
+
     nafn = n;
     heimilisfang = h;
     faedingarar = ar;
