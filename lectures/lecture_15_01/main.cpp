@@ -19,9 +19,14 @@ int main()
 
     d1.ar = 1999;
     d1.manudur = 12;
-    d1.dagur = 31;
+    d1.dagur = 24;
     d1.vikudagur = "Sunnudagur";
 
+    prenta_dagsetning(d1);
+
+    d1 = move_to_next_week(d1);
+
+    prenta_dagsetning(d1);
 
     return 0;
 }
