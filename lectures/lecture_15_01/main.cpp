@@ -31,6 +31,8 @@ int main()
     return 0;
 }
 
+
+
 Dagsetning move_to_next_week(Dagsetning d) {
     Dagsetning tmp = d;
     // pretend all months have 30 days!
