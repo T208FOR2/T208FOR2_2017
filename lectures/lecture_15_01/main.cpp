@@ -56,6 +56,8 @@ int main()
 }
 
 Student::Student() {
+    cout << "I'M THE CONSTRUCTOR!!!" << endl;
+
     nafn = "no name";
     faedingarar = 2000;
     heimilisfang = "no address";
