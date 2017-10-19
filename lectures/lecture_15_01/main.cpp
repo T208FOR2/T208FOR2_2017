@@ -11,6 +11,9 @@ struct Dagsetning {
 
 int main()
 {
+    Dagsetning d1;
+
+
 
     return 0;
 }
