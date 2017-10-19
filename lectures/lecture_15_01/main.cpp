@@ -3,8 +3,10 @@
 
 using namespace std;
 
-struct Namskeid {
-    string nafn;
+class Namskeid {
+    public:
+        string nafn;
+        void prenta();
 };
 
 class Student {
