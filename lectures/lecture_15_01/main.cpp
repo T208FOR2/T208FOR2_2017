@@ -50,7 +50,15 @@ int main()
 }
 
 void Student::set_faedingarar(int ar) {
-    faedingarar = ar;
+    if (ar < 1800) {
+        cout << "Sorry, wrong birthyear" << endl;
+    }
+    else if (ar > 2017) {
+        cout << "Sorry, please reapply after you're born" << endl;
+    }
+    else {
+        faedingarar = ar;
+    }
 }
 
 void Student::prenta() {
