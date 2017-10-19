@@ -14,6 +14,8 @@ class Student {
         string heimilisfang;
 
         Namskeid uppahaldsfag;
+
+        void prenta();
 };
 
 
@@ -29,11 +31,13 @@ int main()
     s1.heimilisfang = "Laugavegur 11";
     s1.uppahaldsfag = n1;
 
-    cout << "Nemandi: " << s1.nafn << " (" << s1.faedingarar << ")";
-    cout << " Heimili: " << s1.heimilisfang << endl;
-    cout << "Uppahaldsfag: " << s1.uppahaldsfag.nafn << endl;
+    s1.prenta();
 
     return 0;
 }
 
-
+void Student::prenta() {
+   cout << "Nemandi: " << nafn << " (" << faedingarar << ")";
+    cout << " Heimili: " << heimilisfang << endl;
+    cout << "Uppahaldsfag: " << uppahaldsfag.nafn << endl;
+}
