@@ -36,6 +36,7 @@ int main()
     n2.nafn = "Staerdfraedi";
 
     Student s1,s2,s3;
+
     s1.nafn = "Jon";
     s1.set_faedingarar(1992);
     s1.heimilisfang = "Laugavegur 11";
@@ -48,16 +49,19 @@ int main()
 
     s1.prenta();
     s2.prenta();
+    s3.prenta();
+
 
     return 0;
 }
 
 Student::Student() {
-    nafn = "";
+    nafn = "no name";
     faedingarar = 2000;
-    heimilisfang = "";
+    heimilisfang = "no address";
 
-    uppahaldsfag = {""};
+    Namskeid tomt = {"no course"};
+    uppahaldsfag = tomt;
 }
 
 void Student::set_faedingarar(int ar) {
