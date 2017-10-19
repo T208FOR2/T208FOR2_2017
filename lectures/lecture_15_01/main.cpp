@@ -12,12 +12,17 @@ class Namskeid {
 class Student {
     public:
         string nafn;
-        int faedingarar;
         string heimilisfang;
 
         Namskeid uppahaldsfag;
 
+        void set_faedingarar(int ar);
+
         void prenta();
+
+    private:
+        int faedingarar;
+
 };
 
 
