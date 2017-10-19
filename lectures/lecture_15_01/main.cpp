@@ -14,9 +14,8 @@ int main()
 {
     Dagsetning d;
 
-    cin >> d.ar >> d.manudur >> d.dagur >> d.vikudagur;
-
-    cout << d.dagur << "/" << d.manudur << "/" << d.ar << " (" << d.vikudagur << ")" << endl;
+    cin >> d;
+    cout << d;
 
 
     return 0;
