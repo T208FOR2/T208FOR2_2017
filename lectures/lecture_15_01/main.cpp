@@ -28,6 +28,10 @@ int main()
     s1.heimilisfang = "Laugavegur 11";
     s1.uppahaldsfag = n1;
 
+    cout << "Nemandi: " << s1.nafn << " (" << s1.faedingarar << ")";
+    cout << " Heimili: " << s1.heimilisfang << endl;
+    cout << "Uppahaldsfag: " << s1.uppahaldsfag.nafn << endl;
+
     return 0;
 }
 
