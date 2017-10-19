@@ -17,6 +17,7 @@ class Student {
         Namskeid uppahaldsfag;
 
         void set_faedingarar(int ar);
+        int get_faedingarar();
 
         void prenta();
 
@@ -59,6 +60,10 @@ void Student::set_faedingarar(int ar) {
     else {
         faedingarar = ar;
     }
+}
+
+int Student::get_faedingarar() {
+    return faedingarar;
 }
 
 void Student::prenta() {
