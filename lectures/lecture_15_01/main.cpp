@@ -11,6 +11,8 @@ class Namskeid {
 
 class Student {
     public:
+        Student();
+
         string nafn;
         string heimilisfang;
 
@@ -48,6 +50,14 @@ int main()
     s2.prenta();
 
     return 0;
+}
+
+Student::Student() {
+    nafn = "";
+    faedingarar = 2000;
+    heimilisfang = "";
+
+    uppahaldsfag = {""};
 }
 
 void Student::set_faedingarar(int ar) {
