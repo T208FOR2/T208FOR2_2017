@@ -34,12 +34,12 @@ int main()
 
     Student s1,s2,s3;
     s1.nafn = "Jon";
-    s1.faedingarar = 1992;
+    s1.set_faedingarar(1992);
     s1.heimilisfang = "Laugavegur 11";
     s1.uppahaldsfag = n1;
 
     s2.nafn = "Sigga";
-    s2.faedingarar = 1991;
+    s2.set_faedingarar(1991);
     s2.heimilisfang = "Kringlan 7";
     s2.uppahaldsfag = n2;
 
@@ -47,6 +47,10 @@ int main()
     s2.prenta();
 
     return 0;
+}
+
+void Student::set_faedingarar(int ar) {
+    faedingarar = ar;
 }
 
 void Student::prenta() {
