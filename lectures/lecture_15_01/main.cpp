@@ -49,3 +49,9 @@ void Student::prenta() {
     cout << " Heimili: " << heimilisfang << endl;
     cout << "Uppahaldsfag: " << uppahaldsfag.nafn << endl;
 }
+
+void Namskeid::prenta() {
+    cout << nafn;
+}
+
+
