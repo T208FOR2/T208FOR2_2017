@@ -21,9 +21,12 @@ int main()
 {
     Timi t;
 
-    t.set_klst(14);
-    t.set_minutur(59);
+    t.set_klst(4543);
+    t.set_minutur(-345359);
 
+    if (t.get_klst() < 10) {
+        cout << "0";
+    }
     cout << t.get_klst() << ":" << t.get_minutur() << endl;
 
 
