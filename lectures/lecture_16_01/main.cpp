@@ -13,6 +13,9 @@ class Timi {
         int get_minutur() {return minutur; };
 
         void prenta();
+
+        friend Timi addTimi(Timi t1, Timi t2);
+
     private:
         int klst;
         int minutur;
@@ -20,8 +23,6 @@ class Timi {
         void fix_klst();
         void fix_minutur();
 };
-
-Timi addTimi(Timi t1, Timi t2);
 
 int main()
 {
