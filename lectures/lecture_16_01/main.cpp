@@ -17,6 +17,7 @@ class Timi {
         friend Timi addTimi(const Timi &t1, const Timi &t2);
         friend Timi operator + (const Timi &lhs, const Timi &rhs);
 
+        friend bool operator > (const Timi &lhs, const Timi &rhs);
 
     private:
         int klst;
@@ -52,6 +53,18 @@ int main()
     return 0;
 }
 
+
+bool operator > (const Timi &lhs, const Timi &rhs) {
+    if (lhs.klst > rhs.klst) {
+        return true;
+    }
+    else if (lhs.klst == rhs.klst && lhs.minutur > rhs.minutur) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 Timi addTimi(const Timi &t1, const Timi &t2) {
     Timi nidurstada;
