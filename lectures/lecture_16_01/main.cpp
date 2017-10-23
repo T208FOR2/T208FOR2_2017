@@ -15,7 +15,7 @@ class Timi {
         void prenta() const;
 
         friend Timi addTimi(const Timi &t1, const Timi &t2);
-        friend Timi operator + (const Timi &t1, const Timi &t2);
+        friend Timi operator + (const Timi &lhs, const Timi &rhs);
 
 
     private:
@@ -38,7 +38,7 @@ int main()
     cout << "t2: ";
     t2.prenta();
 
-    t3 = addTimi(t1, t2);
+    t3 = t1 + t2;
     cout << "t3 = (t1+t2): ";
     t3.prenta();
 
@@ -54,7 +54,16 @@ Timi addTimi(const Timi &t1, const Timi &t2) {
     nidurstada.fix_minutur();
     nidurstada.fix_klst();
 
-    t1.prenta();
+    return nidurstada;
+}
+
+Timi operator + (const Timi &lhs, const Timi &rhs) {
+    Timi nidurstada;
+
+    nidurstada.klst = lhs.klst + rhs.klst;
+    nidurstada.minutur = lhs.minutur + rhs.minutur;
+    nidurstada.fix_minutur();
+    nidurstada.fix_klst();
 
     return nidurstada;
 }
