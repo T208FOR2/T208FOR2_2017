@@ -18,6 +18,7 @@ class Timi {
         friend Timi operator + (const Timi &lhs, const Timi &rhs);
 
         friend bool operator > (const Timi &lhs, const Timi &rhs);
+        friend bool operator <= (const Timi &lhs, const Timi &rhs);
 
         friend ostream& operator << (ostream& outs, const Timi &t);
         friend istream& operator >> (istream& ins, Timi &t);
@@ -52,6 +53,9 @@ int main()
     return 0;
 }
 
+bool operator <= (const Timi &lhs, const Timi &rhs) {
+    return !(lhs > rhs);
+}
 
 bool operator > (const Timi &lhs, const Timi &rhs) {
     if (lhs.klst > rhs.klst) {
