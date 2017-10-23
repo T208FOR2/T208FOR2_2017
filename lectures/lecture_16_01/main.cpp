@@ -19,6 +19,8 @@ class Timi {
 
         friend bool operator > (const Timi &lhs, const Timi &rhs);
 
+        friend ostream& operator << (ostream& outs, const Timi &t);
+
     private:
         int klst;
         int minutur;
@@ -100,6 +102,17 @@ Timi::Timi(int k, int m) {
     fix_klst();
 
     cout << "Constructor: Timi(int k, int m)" << endl;
+}
+
+ostream& operator << (ostream& outs, const Timi &t) {
+    if (t.klst < 10) {
+        outs << "0";
+    }
+    outs << t.klst << ":";
+    if (t.minutur < 10) {
+        outs << "0";
+    }
+    outs << minutur;
 }
 
 void Timi::prenta() const {
