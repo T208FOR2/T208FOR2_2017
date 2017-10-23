@@ -14,7 +14,7 @@ class Timi {
 
         void prenta();
 
-        friend Timi addTimi(Timi t1, Timi t2);
+        friend Timi addTimi(const Timi &t1, const Timi &t2);
 
     private:
         int klst;
@@ -44,7 +44,7 @@ int main()
 }
 
 
-Timi addTimi(Timi t1, Timi t2) {
+Timi addTimi(const Timi &t1, const Timi &t2) {
     Timi nidurstada;
 
     nidurstada.klst = t1.klst + t2.klst;
