@@ -34,14 +34,11 @@ int main()
     t1.set_klst(0);
     t1.set_minutur(90);
 
-    cout << "t1: ";
-    t1.prenta();
-    cout << "t2: ";
-    t2.prenta();
+    cout << "t1: " << t1 << endl;
+    cout << "t2: " << t2 << endl;
 
     t3 = t1 + t2;
-    cout << "t3 = (t1+t2): ";
-    t3.prenta();
+    cout << "t3 = (t1+t2): " << t3 << endl;
 
     if (t1 > t2) {
         cout << "t1 is larger" << endl;
