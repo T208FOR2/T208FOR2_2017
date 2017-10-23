@@ -5,6 +5,7 @@ using namespace std;
 class Timi {
     public:
         Timi();
+        Timi(int m);
         Timi(int k, int m);
 
         void set_klst(int new_klst);
@@ -98,6 +99,16 @@ Timi::Timi() {
     klst = 0;
     minutur = 0;
     cout << "Constructor: Timi()" << endl;  // Debug info
+}
+
+Timi::Timi(int m) {
+    klst = 0;
+    minutur = m;
+
+    fix_minutur();
+    fix_klst();
+
+    cout << "Constructor: Timi(int m)" << endl;
 }
 
 Timi::Timi(int k, int m) {
