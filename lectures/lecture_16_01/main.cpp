@@ -21,8 +21,8 @@ int main()
 {
     Timi t;
 
-    t.set_klst(4543);
-    t.set_minutur(-345359);
+    t.set_klst(0);
+    t.set_minutur(90);
 
     if (t.get_klst() < 10) {
         cout << "0";
