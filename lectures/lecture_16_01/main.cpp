@@ -14,6 +14,9 @@ class Timi {
     private:
         int klst;
         int minutur;
+
+        void fix_klst();
+        void fix_minutur();
 };
 
 
@@ -48,3 +51,17 @@ void Timi::set_minutur(int new_minutur) {
     minutur = new_minutur;
 }
 
+void Timi::fix_klst() {
+
+}
+
+void Timi::fix_minutur() {
+    while (minutur < 0) {
+        minutur += 60;
+        klst--;
+    }
+    while (minutur >= 60) {
+        minutur -= 60;
+        klst++;
+    }
+}
