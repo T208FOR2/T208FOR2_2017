@@ -9,10 +9,10 @@ class Timi {
 
         void set_klst(int new_klst);
         void set_minutur(int new_minutur);
-        int get_klst() { return klst; };  // inline version for short functions
-        int get_minutur() {return minutur; };
+        int get_klst() const { return klst; };  // inline version for short functions
+        int get_minutur() const {return minutur; };
 
-        void prenta();
+        void prenta() const;
 
         friend Timi addTimi(const Timi &t1, const Timi &t2);
 
@@ -74,7 +74,7 @@ Timi::Timi(int k, int m) {
     cout << "Constructor: Timi(int k, int m)" << endl;
 }
 
-void Timi::prenta() {
+void Timi::prenta() const {
     if (klst < 10) {
         cout << "0";
     }
