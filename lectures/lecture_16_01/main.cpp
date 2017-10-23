@@ -24,12 +24,13 @@ class Timi {
 
 int main()
 {
-    Timi t;
+    Timi t1, t2(3,23);
 
-    t.set_klst(0);
-    t.set_minutur(90);
+    t1.set_klst(0);
+    t1.set_minutur(90);
 
-    t.prenta();
+    t1.prenta();
+    t2.prenta();
 
     return 0;
 }
