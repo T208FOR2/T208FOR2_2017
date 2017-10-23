@@ -11,6 +11,7 @@ class Timi {
         int get_klst() { return klst; };  // inline version for short functions
         int get_minutur() {return minutur; };
 
+        void prenta();
     private:
         int klst;
         int minutur;
@@ -27,11 +28,7 @@ int main()
     t.set_klst(0);
     t.set_minutur(90);
 
-    if (t.get_klst() < 10) {
-        cout << "0";
-    }
-    cout << t.get_klst() << ":" << t.get_minutur() << endl;
-
+    t.prenta();
 
     return 0;
 }
@@ -42,6 +39,14 @@ Timi::Timi() {
     minutur = 0;
     cout << "Constructor: Timi()" << endl;  // Debug info
 }
+
+void Timi::prenta() {
+    if (klst < 10) {
+        cout << "0";
+    }
+    cout << klst << ":" << minutur << endl;
+}
+
 
 void Timi::set_klst(int new_klst) {
     klst = new_klst;
