@@ -20,6 +20,7 @@ class Timi {
         friend bool operator > (const Timi &lhs, const Timi &rhs);
 
         friend ostream& operator << (ostream& outs, const Timi &t);
+        friend istream& operator >> (istream& ins, const Timi &t);
 
     private:
         int klst;
