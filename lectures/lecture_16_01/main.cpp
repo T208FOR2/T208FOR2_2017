@@ -21,6 +21,7 @@ class Timi {
         void fix_minutur();
 };
 
+Timi addTimi(Timi t1, Timi t2);
 
 int main()
 {
@@ -29,13 +30,25 @@ int main()
     t1.set_klst(0);
     t1.set_minutur(90);
 
+    cout << "t1: ";
     t1.prenta();
+    cout << "t2: ";
     t2.prenta();
 
-    t3 = t1 + t2;
+    t3 = addTimi(t1, t2);
+    cout << "t3 = (t1+t2): ";
     t3.prenta();
 
     return 0;
+}
+
+
+Timi addTimi(Timi t1, Timi t2) {
+    Timi nidurstada;
+    nidurstada.set_minutur( t1.get_minutur() + t2.get_minutur() );
+    nidurstada.set_klst( t1.get_klst() + t2.get_klst() );
+
+    return nidurstada;
 }
 
 
