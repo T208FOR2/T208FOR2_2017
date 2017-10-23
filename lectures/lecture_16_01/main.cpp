@@ -20,7 +20,7 @@ class Timi {
         friend bool operator > (const Timi &lhs, const Timi &rhs);
 
         friend ostream& operator << (ostream& outs, const Timi &t);
-        friend istream& operator >> (istream& ins, const Timi &t);
+        friend istream& operator >> (istream& ins, Timi &t);
 
     private:
         int klst;
@@ -34,8 +34,7 @@ int main()
 {
     Timi t1, t2(3,23), t3;
 
-    t1.set_klst(0);
-    t1.set_minutur(90);
+    cin >> t1;
 
     cout << "t1: " << t1 << endl;
     cout << "t2: " << t2 << endl;
@@ -103,6 +102,13 @@ Timi::Timi(int k, int m) {
     fix_klst();
 
     cout << "Constructor: Timi(int k, int m)" << endl;
+}
+
+istream& operator >> (istream& ins, Timi &t) {
+    ins >> t.klst >> t.minutur;
+    t.fix_minutur();
+    t.fix_klst();
+    return ins;
 }
 
 ostream& operator << (ostream& outs, const Timi &t) {
