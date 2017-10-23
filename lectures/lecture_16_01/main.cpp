@@ -46,8 +46,11 @@ int main()
 
 Timi addTimi(Timi t1, Timi t2) {
     Timi nidurstada;
-    nidurstada.set_minutur( t1.get_minutur() + t2.get_minutur() );
-    nidurstada.set_klst( t1.get_klst() + t2.get_klst() );
+
+    nidurstada.klst = t1.klst + t2.klst;
+    nidurstada.minutur = t1.minutur + t2.minutur;
+    nidurstada.fix_minutur();
+    nidurstada.fix_klst();
 
     return nidurstada;
 }
