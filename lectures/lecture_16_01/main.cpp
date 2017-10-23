@@ -52,6 +52,8 @@ Timi addTimi(const Timi &t1, const Timi &t2) {
     nidurstada.fix_minutur();
     nidurstada.fix_klst();
 
+    t1.prenta();
+
     return nidurstada;
 }
 
