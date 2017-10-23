@@ -50,6 +50,8 @@ int main()
         cout << "t2 is larger" << endl;
     }
 
+    cout << "t1 + 15: " << t1 + 15 << endl;
+
     return 0;
 }
 
