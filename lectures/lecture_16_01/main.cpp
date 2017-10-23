@@ -30,11 +30,11 @@ Timi::Timi() {
     cout << "Constructor: Timi()" << endl;  // Debug info
 }
 
-void set_klst(int new_klst) {
+void Timi::set_klst(int new_klst) {
     klst = new_klst;
 }
 
-void set_minutur(int new_minutur) {
+void Timi::set_minutur(int new_minutur) {
     minutur = new_minutur;
 }
 
