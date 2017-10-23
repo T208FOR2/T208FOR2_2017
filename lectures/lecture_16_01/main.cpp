@@ -8,6 +8,8 @@ class Timi {
 
         void set_klst(int new_klst);
         void set_minutur(int new_minutur);
+        int get_klst() { return klst; };  // inline version for short functions
+        int get_minutur() {return minutur; };
 
     private:
         int klst;
@@ -18,6 +20,11 @@ class Timi {
 int main()
 {
     Timi t;
+
+    t.set_klst(14);
+    t.set_minutur(59);
+
+    cout << t.get_klst() << ":" << t.get_minutur() << endl;
 
 
     return 0;
