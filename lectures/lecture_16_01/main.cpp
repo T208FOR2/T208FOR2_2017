@@ -112,7 +112,9 @@ ostream& operator << (ostream& outs, const Timi &t) {
     if (t.minutur < 10) {
         outs << "0";
     }
-    outs << minutur;
+    outs << t.minutur;
+
+    return outs;
 }
 
 void Timi::prenta() const {
