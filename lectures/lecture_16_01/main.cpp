@@ -15,6 +15,8 @@ class Timi {
         void prenta() const;
 
         friend Timi addTimi(const Timi &t1, const Timi &t2);
+        friend Timi operator + (const Timi &t1, const Timi &t2);
+
 
     private:
         int klst;
