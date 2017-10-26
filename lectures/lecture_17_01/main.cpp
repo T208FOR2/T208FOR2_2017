@@ -24,9 +24,13 @@ SantaBag::SantaBag() {
 }
 
 ostream& operator << (ostream& outs, const SantaBag &poki) {
-    outs << "Eigandi: " << poki.eigandi << ", hardir pakkar: ";
-    outs << poki.hardirpakkar << ", mjukir pakkar: " << poki.mjukirpakkar;
-
+    if (poki.eigandi == "") {
+        outs << "Tomur jolasveinapoki.";
+    }
+    else {
+        outs << "Eigandi: " << poki.eigandi << ", hardir pakkar: ";
+        outs << poki.hardirpakkar << ", mjukir pakkar: " << poki.mjukirpakkar;
+    }
     return outs;
 }
 
