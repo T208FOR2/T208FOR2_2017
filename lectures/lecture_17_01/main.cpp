@@ -90,18 +90,29 @@ SantaBag::SantaBag(string nyr_eigandi, int nyr_hardir, int nyr_mjukir) {
 
 
 
-
-
-
-
 int main() {
-    SantaBag poki1;
-    SantaBag poki2("Stekkjastaur", 5, 7);
-    cin >> poki1;
-    cout << poki1 << endl;
-    cout << poki2 << endl;
+    int n;
+    cin >> n;
 
-    cout << poki1 + poki2 << endl;
+    SantaBag *pokar = new SantaBag[n];
+    SantaBag bigbag;
 
+    for (int i = 0; i < n; i++) {
+        cin >> pokar[i];
+        bigbag += pokar[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << pokar[i] << endl;
+    }
+
+    cout << "-----------------" << endl;
+    cout << bigbag << endl;
+
+
+    delete [] pokar;
     return 0;
 }
+
+
+
