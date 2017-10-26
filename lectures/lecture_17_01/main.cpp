@@ -19,12 +19,25 @@ public:
     friend istream& operator >> (istream& ins, SantaBag &poki);
 
     double value() const;
+
+    friend double friendvalue(SantaBag poki);
 private:
     int hardirpakkar;
     int mjukirpakkar;
     string eigandi;
 
 };
+
+double SantaBag::value() const {
+    return hardirpakkar * 1.0 + mjukirpakkar * 0.6;
+}
+
+
+double friendvalue(SantaBag poki) {
+    return poki.hardirpakkar * 1.0 + poki.mjukirpakkar * 0.6;
+}
+
+
 
 SantaBag::SantaBag() {
     hardirpakkar = 0;
@@ -33,9 +46,6 @@ SantaBag::SantaBag() {
     //cout << "Default constructor" << endl;
 }
 
-double SantaBag::value() const {
-    return hardirpakkar * 1.0 + mjukirpakkar * 0.6;
-}
 
 bool operator > (const SantaBag& lhs, const SantaBag& rhs) {
     return (lhs.value() > rhs.value());
@@ -121,6 +131,7 @@ int main() {
     cout << "The best SantaBag is: " << endl;
     cout << bestbag << endl;
     cout << "and it has the value " << bestbag.value() << endl;
+    cout << "and it has the value " << friendvalue(bestbag) << endl;
 
 
     delete [] pokar;
