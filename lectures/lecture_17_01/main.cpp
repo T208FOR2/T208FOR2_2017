@@ -8,6 +8,8 @@ public:
     SantaBag();
     SantaBag(string nyr_eigandi, int nyr_hardir, int nyr_mjukir);
 
+    friend SantaBag operator + (const SantaBag& lhs, const SantaBag& rhs);
+
     friend ostream& operator << (ostream& outs, const SantaBag &poki);
     friend istream& operator >> (istream& ins, SantaBag &poki);
 private:
@@ -23,6 +25,17 @@ SantaBag::SantaBag() {
     eigandi = "";
     //cout << "Default constructor" << endl;
 }
+
+SantaBag operator + (const SantaBag& lhs, const SantaBag& rhs) {
+    SantaBag nyr_poki;
+
+    nyr_poki.hardirpakkar = lhs.hardirpakkar + rhs.hardirpakkar;
+    nyr_poki.mjukirpakkar = lhs.mjukirpakkar + rhs.mjukirpakkar;
+    nyr_poki.eigandi = lhs.eigandi + " - " + rhs.eigandi;
+
+    return nyr_poki;
+}
+
 
 istream& operator >> (istream& ins, SantaBag &poki) {
     ins >> poki.eigandi >> poki.hardirpakkar >> poki.mjukirpakkar;
@@ -56,12 +69,9 @@ SantaBag::SantaBag(string nyr_eigandi, int nyr_hardir, int nyr_mjukir) {
 int main() {
     SantaBag poki1;
     SantaBag poki2("Stekkjastaur", 5, 7);
-
-    cout << poki1 << endl;
-    cout << poki2 << endl;
-
     cin >> poki1;
-    cout << poki1 << endl;
+
+    cout << poki1 + poki2 << endl;
 
     return 0;
 }
