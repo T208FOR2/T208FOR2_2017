@@ -60,5 +60,8 @@ int main() {
     cout << poki1 << endl;
     cout << poki2 << endl;
 
+    cin >> poki1;
+    cout << poki1 << endl;
+
     return 0;
 }
