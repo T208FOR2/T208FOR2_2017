@@ -10,6 +10,8 @@ public:
 
     friend SantaBag operator + (const SantaBag& lhs, const SantaBag& rhs);
 
+    friend bool operator > (const SantaBag& lhs, const SantaBag& rhs);
+
     friend ostream& operator << (ostream& outs, const SantaBag &poki);
     friend istream& operator >> (istream& ins, SantaBag &poki);
 private:
@@ -17,6 +19,7 @@ private:
     int mjukirpakkar;
     string eigandi;
 
+    double value();
 };
 
 SantaBag::SantaBag() {
@@ -24,6 +27,22 @@ SantaBag::SantaBag() {
     mjukirpakkar = 0;
     eigandi = "";
     //cout << "Default constructor" << endl;
+}
+
+double SantaBag::value() {
+    return hardirpakkar * 1.0 + mjukirpakkar * 0.6;
+}
+
+bool operator > (const SantaBag& lhs, const SantaBag& rhs) {
+    double lhs_value = lhs.value();
+    double rhs_value = rhs.value();
+
+    if (lhs_value > rhs_value) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 SantaBag operator + (const SantaBag& lhs, const SantaBag& rhs) {
