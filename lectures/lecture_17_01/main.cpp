@@ -17,12 +17,13 @@ public:
 
     friend ostream& operator << (ostream& outs, const SantaBag &poki);
     friend istream& operator >> (istream& ins, SantaBag &poki);
+
+    double value() const;
 private:
     int hardirpakkar;
     int mjukirpakkar;
     string eigandi;
 
-    double value() const;
 };
 
 SantaBag::SantaBag() {
@@ -119,6 +120,7 @@ int main() {
 
     cout << "The best SantaBag is: " << endl;
     cout << bestbag << endl;
+    cout << "and it has the value " << bestbag.value() << endl;
 
 
     delete [] pokar;
