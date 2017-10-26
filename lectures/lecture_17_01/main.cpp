@@ -41,6 +41,14 @@ bool operator == (const SantaBag& lhs, const SantaBag& rhs) {
     return (lhs.value() == rhs.value());
 }
 
+bool operator <= (const SantaBag& lhs, const SantaBag& rhs) {
+    return !(lhs > rhs);
+}
+
+bool operator < (const SantaBag& lhs, const SantaBag& rhs) {
+    return !((lhs > rhs) || (lhs == rhs));
+}
+
 SantaBag operator + (const SantaBag& lhs, const SantaBag& rhs) {
     SantaBag nyr_poki;
 
