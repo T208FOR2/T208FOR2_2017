@@ -19,7 +19,7 @@ private:
     int mjukirpakkar;
     string eigandi;
 
-    double value();
+    double value() const;
 };
 
 SantaBag::SantaBag() {
@@ -29,15 +29,12 @@ SantaBag::SantaBag() {
     //cout << "Default constructor" << endl;
 }
 
-double SantaBag::value() {
+double SantaBag::value() const {
     return hardirpakkar * 1.0 + mjukirpakkar * 0.6;
 }
 
 bool operator > (const SantaBag& lhs, const SantaBag& rhs) {
-    double lhs_value = lhs.value();
-    double rhs_value = rhs.value();
-
-    if (lhs_value > rhs_value) {
+    if (lhs.value() > rhs.value()) {
         return true;
     }
     else {
