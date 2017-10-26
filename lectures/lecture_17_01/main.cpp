@@ -9,6 +9,7 @@ public:
     SantaBag(string nyr_eigandi, int nyr_hardir, int nyr_mjukir);
 
     friend ostream& operator << (ostream& outs, const SantaBag &poki);
+    friend istream& operator >> (istream& ins, SantaBag &poki);
 private:
     int hardirpakkar;
     int mjukirpakkar;
@@ -21,6 +22,11 @@ SantaBag::SantaBag() {
     mjukirpakkar = 0;
     eigandi = "";
     //cout << "Default constructor" << endl;
+}
+
+istream& operator >> (istream& ins, SantaBag &poki) {
+    ins >> poki.eigandi >> poki.hardirpakkar >> poki.mjukirpakkar;
+    return ins;
 }
 
 ostream& operator << (ostream& outs, const SantaBag &poki) {
