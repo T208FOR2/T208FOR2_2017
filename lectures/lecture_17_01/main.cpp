@@ -11,6 +11,9 @@ public:
     friend SantaBag operator + (const SantaBag& lhs, const SantaBag& rhs);
 
     friend bool operator > (const SantaBag& lhs, const SantaBag& rhs);
+    friend bool operator == (const SantaBag& lhs, const SantaBag& rhs);
+    friend bool operator < (const SantaBag& lhs, const SantaBag& rhs);
+    friend bool operator <= (const SantaBag& lhs, const SantaBag& rhs);
 
     friend ostream& operator << (ostream& outs, const SantaBag &poki);
     friend istream& operator >> (istream& ins, SantaBag &poki);
@@ -48,6 +51,8 @@ bool operator <= (const SantaBag& lhs, const SantaBag& rhs) {
 bool operator < (const SantaBag& lhs, const SantaBag& rhs) {
     return !((lhs > rhs) || (lhs == rhs));
 }
+
+
 
 SantaBag operator + (const SantaBag& lhs, const SantaBag& rhs) {
     SantaBag nyr_poki;
