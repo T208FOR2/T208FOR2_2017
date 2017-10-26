@@ -70,6 +70,8 @@ int main() {
     SantaBag poki1;
     SantaBag poki2("Stekkjastaur", 5, 7);
     cin >> poki1;
+    cout << poki1 << endl;
+    cout << poki2 << endl;
 
     cout << poki1 + poki2 << endl;
 
