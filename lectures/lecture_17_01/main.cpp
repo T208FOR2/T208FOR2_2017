@@ -19,12 +19,14 @@ SantaBag::SantaBag() {
     hardirpakkar = 0;
     mjukirpakkar = 0;
     eigandi = "";
+    //cout << "Default constructor" << endl;
 }
 
 SantaBag::SantaBag(string nyr_eigandi, int nyr_hardir, int nyr_mjukir) {
     hardirpakkar = nyr_hardir;
     mjukirpakkar = nyr_mjukir;
     eigandi = nyr_eigandi;
+    //cout << "The other constructor" << endl;
 }
 
 
@@ -35,7 +37,7 @@ SantaBag::SantaBag(string nyr_eigandi, int nyr_hardir, int nyr_mjukir) {
 
 int main() {
     SantaBag poki1;
-
+    SantaBag poki2("Stekkjastaur", 5, 7);
 
     return 0;
 }
