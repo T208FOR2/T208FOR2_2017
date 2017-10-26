@@ -34,12 +34,11 @@ double SantaBag::value() const {
 }
 
 bool operator > (const SantaBag& lhs, const SantaBag& rhs) {
-    if (lhs.value() > rhs.value()) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return (lhs.value() > rhs.value());
+}
+
+bool operator == (const SantaBag& lhs, const SantaBag& rhs) {
+    return (lhs.value() == rhs.value());
 }
 
 SantaBag operator + (const SantaBag& lhs, const SantaBag& rhs) {
