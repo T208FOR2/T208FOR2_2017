@@ -109,6 +109,16 @@ int main() {
     cout << "The total is: " << endl;
     cout << bigbag << endl;
 
+    // find the best bag:
+    SantaBag bestbag;
+    for (int i = 0; i < n; i++) {
+        if (pokar[i] > bestbag) {
+            bestbag = pokar[i];
+        }
+    }
+
+    cout << "The best SantaBag is: " << endl;
+    cout << bestbag << endl;
 
 
     delete [] pokar;
