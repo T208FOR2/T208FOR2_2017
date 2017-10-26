@@ -99,15 +99,16 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         cin >> pokar[i];
-        bigbag += pokar[i];
+        bigbag = bigbag + pokar[i];
     }
 
     for (int i = 0; i < n; i++) {
         cout << pokar[i] << endl;
     }
 
-    cout << "-----------------" << endl;
+    cout << "The total is: " << endl;
     cout << bigbag << endl;
+
 
 
     delete [] pokar;
