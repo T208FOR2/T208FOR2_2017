@@ -20,7 +20,7 @@ public:
 
     double value() const;
 
-    friend double friendvalue(SantaBag poki);
+    friend double value_v2(SantaBag poki);
 private:
     int hardirpakkar;
     int mjukirpakkar;
@@ -33,7 +33,7 @@ double SantaBag::value() const {
 }
 
 
-double friendvalue(SantaBag poki) {
+double value_v2(SantaBag poki) {
     return poki.hardirpakkar * 1.0 + poki.mjukirpakkar * 0.6;
 }
 
@@ -131,7 +131,7 @@ int main() {
     cout << "The best SantaBag is: " << endl;
     cout << bestbag << endl;
     cout << "and it has the value " << bestbag.value() << endl;
-    cout << "and it has the value " << friendvalue(bestbag) << endl;
+    cout << "and it has the value " << value_v2(bestbag) << endl;
 
 
     delete [] pokar;
