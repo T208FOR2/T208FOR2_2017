@@ -82,9 +82,11 @@ void Numbers::double_size_of_array() {
 }
 
 void printArray(Numbers x) {
+    cout << "Printing: ";
     for (int i = 0; i < x.n; i++) {
-        cout << x.p[i] << endl;
+        cout << x.p[i] << " ";
     }
+    cout << endl;
 }
 
 int main() {
@@ -95,6 +97,7 @@ int main() {
     }
 
     printArray(num);
+    cout << "-----------------" << endl;
 
     return 0;
 }
