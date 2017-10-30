@@ -77,5 +77,7 @@ int main() {
         num.append(i);
     }
 
+    printArray(num);
+
     return 0;
 }
