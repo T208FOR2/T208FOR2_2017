@@ -56,8 +56,13 @@ Numbers::Numbers( const Numbers& cloneme ) {
 
 void Numbers::operator = ( const Numbers& sameasme ) {
     cout << "***** ASSIGNMENT OPERATOR ******" << endl;
-    p = new int[max_elements];
-    max_elements = sameasme.max_elements;
+    if (max_elements != sameasme.max_elements) {
+        if (p != NULL) {
+            delete [] p;
+        }
+        p = new int[max_elements];
+        max_elements = sameasme.max_elements;
+    }
 
     n = sameasme.n;
     for (int i = 0; i < n; i++) {
