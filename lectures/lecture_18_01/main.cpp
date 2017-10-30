@@ -8,11 +8,13 @@ public:
     ~Numbers();
 
     void append(int i);
-private:
+
     int *p;
 
     int n;
     int max_elements;
+
+private:
 
     void double_size_of_array();
 };
@@ -59,6 +61,12 @@ void Numbers::double_size_of_array() {
         cout << "----------- DELETE" << endl;
         delete [] p;
         p = new_p;
+    }
+}
+
+void printArray(Numbers num) {
+    for (int i = 0; i < num.n; i++) {
+        cout << num.p[i] << endl;
     }
 }
 
