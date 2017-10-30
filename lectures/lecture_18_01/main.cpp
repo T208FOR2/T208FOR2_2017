@@ -5,6 +5,7 @@ using namespace std;
 class Numbers {
 public:
     Numbers();
+    ~Numbers();
 
     void append(int i);
 private:
@@ -21,6 +22,16 @@ Numbers::Numbers() {
     p = NULL;
     n = 0;
     max_elements = 0;
+}
+
+Numbers::~Numbers() {
+    cout << "***** DESTRUCTOR ******" << endl;
+
+    if (p != NULL) {
+        cout << "----------- DELETE" << endl;
+        delete [] p;
+        p = NULL;
+    }
 }
 
 void Numbers::append(int i) {
