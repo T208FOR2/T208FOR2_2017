@@ -6,6 +6,7 @@ class Numbers {
 public:
     Numbers();
     ~Numbers();
+    Numbers( const Numbers& cloneme );
 
     void append(int i);
 
@@ -35,6 +36,22 @@ Numbers::~Numbers() {
         p = NULL;
     }
 }
+
+Numbers::Numbers( const Numbers& cloneme ) {
+    cout << "***** COPY CONSTRUCTOR ******" << endl;
+    n = cloneme.n;
+    max_elements = cloneme.max_elements;
+    if (max_elements == 0) {
+        p = NULL;
+    }
+    else {
+        p = new int[max_elements];
+        for (int i = 0; i < n; i++) {
+            p[i] = cloneme.p[i];
+        }
+    }
+}
+
 
 void Numbers::append(int i) {
     if (n == max_elements) {
