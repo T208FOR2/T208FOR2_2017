@@ -98,6 +98,10 @@ int main() {
 
     printArray(num);
     cout << "-----------------" << endl;
-
+    for (int i = 0; i < 5; i++) {
+        Numbers tmp;
+        tmp = num;
+        printArray(tmp);
+    }
     return 0;
 }
