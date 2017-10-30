@@ -64,7 +64,10 @@ void Numbers::operator = ( const Numbers& sameasme ) {
         max_elements = sameasme.max_elements;
     }
 
-
+    n = sameasme.n;
+    for (int i = 0; i < n; i++) {
+        p[i] = sameasme.p[i];
+    }
 }
 
 
