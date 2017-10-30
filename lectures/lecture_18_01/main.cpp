@@ -8,6 +8,8 @@ public:
     ~Numbers();
     Numbers( const Numbers& cloneme );
 
+    void operator = ( const Numbers& sameasme );
+
     void append(int i);
 
     int *p;
@@ -51,6 +53,8 @@ Numbers::Numbers( const Numbers& cloneme ) {
         }
     }
 }
+
+
 
 
 void Numbers::append(int i) {
