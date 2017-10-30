@@ -64,9 +64,9 @@ void Numbers::double_size_of_array() {
     }
 }
 
-void printArray(Numbers num) {
-    for (int i = 0; i < num.n; i++) {
-        cout << num.p[i] << endl;
+void printArray(Numbers x) {
+    for (int i = 0; i < x.n; i++) {
+        cout << x.p[i] << endl;
     }
 }
 
