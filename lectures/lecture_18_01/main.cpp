@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 void printArray(Numbers x) {
     cout << "Printing: ";
     for (int i = 0; i < x.n; i++) {
