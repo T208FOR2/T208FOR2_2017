@@ -22,6 +22,13 @@ private:
 };
 
 int main() {
-
+    Team Elite("The Elite Team", 90, 85, true);
+    Team A, B, C;
+    cin >> A >> B;
+    C = A + B;
+    cout << A << endl << B << endl << C << endl;
+    if (C > Elite) {
+        cout << C << " is better than the elite team!" << endl;
+    }
     return 0;
 }
