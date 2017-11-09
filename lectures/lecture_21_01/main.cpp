@@ -42,6 +42,26 @@ bool operator > (const Team& lhs, const Team& rhs) {
 }
 
 Team operator + (const Team& lhs, const Team& rhs) {
+    Team newteam;
+
+    newteam.nafn = lhs.nafn + " - " + rhs.nafn;
+    if (lhs.attack > rhs.attack) {
+        newteam.attack = lhs.attack;
+    }
+    else {
+        newteam.attack = rhs.attack;
+    }
+
+    if (lhs.defence > rhs.defence) {
+        newteam.defence = lhs.defence;
+    }
+    else {
+        newteam.defence = rhs.defence;
+    }
+
+    newteam.coach = (lhs.coach || rhs.coach);
+
+    return newteam;
 }
 
 ostream& operator << (ostream& outs, const Team& t) {
@@ -49,6 +69,7 @@ ostream& operator << (ostream& outs, const Team& t) {
     if (t.coach) {
         outs << " with a coach";
     }
+    return outs;
 }
 
 istream& operator >> (istream& ins, Team& t) {
@@ -60,6 +81,7 @@ istream& operator >> (istream& ins, Team& t) {
     else {
         t.coach = false;
     }
+    return ins;
 }
 
 double Team::strength() const {
