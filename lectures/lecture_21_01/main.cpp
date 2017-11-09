@@ -37,5 +37,11 @@ int main() {
     printLinkNodes(head);
     switchPlaces(head);
     printLinkNodes(head);
+
+    tmp = head->next->next;
+    head->next->next = tmp->next;
+    delete tmp;
+
+    printLinkNodes(head);
     return 0;
 }
