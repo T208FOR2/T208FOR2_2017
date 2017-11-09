@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
+
+string replace_text(string texti, string a, string b);
+string strip_text(string texti);
 
 int main()
 {
@@ -19,3 +23,24 @@ int main()
 
     return 0;
 }
+
+string replace_text(string texti, string a, string b) {
+
+}
+
+
+string strip_text(string texti) {
+    while ( isspace(texti[0]) ) {
+        texti = texti.substr(1, texti.length());
+    }
+    while ( isspace(texti[texti.length()-1]) ) {
+        texti = texti.substr(0, texti.length() -1);
+    }
+    return texti;
+}
+
+
+
+
+
+
