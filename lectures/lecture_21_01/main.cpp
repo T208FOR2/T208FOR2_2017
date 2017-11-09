@@ -16,14 +16,12 @@ void printLinkNodes(LinkNode* thenode) {
 
 void switchPlaces(LinkNode* &thenode) {
     //*** ADD CODE HERE ***
-    cout << "-----------------" << endl;
     LinkNode *pB = thenode->next;
     LinkNode *pC = thenode->next->next;
 
-    cout << pB->data << endl;
-    cout << pC->data << endl;
-
-    cout << "-----------------" << endl;
+    pB->next = pC->next;
+    pC->next = pB;
+    thenode->next = pC;
     //*** END OF ADDED CODE ***
 }
 
