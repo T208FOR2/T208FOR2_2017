@@ -2,7 +2,8 @@
 using namespace std;
 class Dummy {
 public:
-    Dummy(int k); ~Dummy();
+    Dummy(int k);
+    ~Dummy();
     int *p;
     int n;
 };
