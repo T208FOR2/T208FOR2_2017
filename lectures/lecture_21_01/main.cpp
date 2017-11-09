@@ -21,6 +21,7 @@ private:
     bool coach;
 };
 
+
 int main() {
     Team Elite("The Elite Team", 90, 85, true);
     Team A, B, C;
