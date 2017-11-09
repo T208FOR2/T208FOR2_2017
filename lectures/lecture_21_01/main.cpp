@@ -11,6 +11,8 @@ public:
     friend bool operator > (const Team& lhs, const Team& rhs);
     friend Team operator + (const Team& lhs, const Team& rhs);
 
+    friend ostream& operator << (ostream& outs, const Team& t);
+    friend istream& operator >> (istream& ins, Team& t);
 
 private:
     string nafn;
