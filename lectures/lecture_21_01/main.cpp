@@ -32,9 +32,9 @@ string replace_text(string texti, string a, string b) {
     unsigned int pos = texti.find(a);
     while (pos < texti.length()) {
         texti = texti.substr(0, pos) + b + texti.substr(pos + a.length(), texti.length());
+        pos = texti.find(a, pos+b.length());
     }
-
-
+    return texti;
 }
 
 
