@@ -26,7 +26,15 @@ Dummy::Dummy(const Dummy& cloneme) {
 }
 
 void Dummy::operator = (const Dummy& sameasme) {
+    if (n != sameasme.n) {
+        delete [] p;
+        n = sameasme.n;
+        p = new int[n];
+    }
 
+    for (int i = 0; i < n; i++) {
+        p[i] = sameasme.p[i];
+    }
 }
 
 Dummy::~Dummy() {
