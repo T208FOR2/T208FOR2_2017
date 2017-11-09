@@ -22,6 +22,8 @@ int main()
     cout << "\"" << texti << "\"" << endl;
 
     texti = replace_text(texti, a, b);
+    texti = replace_text(texti, "test", "");
+    texti = replace_text(texti, "  ", " ");
     texti = strip_text(texti);
 
     cout << "\"" << texti << "\"" << endl;
