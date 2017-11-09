@@ -38,6 +38,7 @@ Team::Team(string new_nafn, int new_attack, int new_defence, bool new_coach) {
 }
 
 bool operator > (const Team& lhs, const Team& rhs) {
+    return (lhs.strength() > rhs.strength());
 }
 Team operator + (const Team& lhs, const Team& rhs) {
 }
