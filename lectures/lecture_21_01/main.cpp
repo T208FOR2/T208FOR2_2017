@@ -20,7 +20,7 @@ private:
     int defence;
     bool coach;
 
-    double strength();
+    double strength() const;
 };
 
 Team::Team() {
@@ -40,17 +40,29 @@ Team::Team(string new_nafn, int new_attack, int new_defence, bool new_coach) {
 bool operator > (const Team& lhs, const Team& rhs) {
     return (lhs.strength() > rhs.strength());
 }
+
 Team operator + (const Team& lhs, const Team& rhs) {
 }
 
 ostream& operator << (ostream& outs, const Team& t) {
+    outs << t.nafn << " (" << t.attack << ", " << t.defence << ")";
+    if (t.coach) {
+        outs << " with a coach";
+    }
 }
 
 istream& operator >> (istream& ins, Team& t) {
-
+    int thecoach;
+    ins >> t.nafn >> t.attack >> t.defence >> thecoach;
+    if (thecoach == 1) {
+        t.coach = true;
+    }
+    else {
+        t.coach = false;
+    }
 }
 
-double Team::strength() {
+double Team::strength() const {
     if (coach) {
         return (attack*attack + defence*defence)*1.2;
     }
