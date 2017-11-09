@@ -2,45 +2,21 @@
 
 using namespace std;
 
-struct ListNode {
-    int data;
-    ListNode *next;
-};
-
-void print_reverse(ListNode *current) {
-    if (current == NULL) {
-        return;
-    }
-    else {
-        print_reverse(current->next);
-        cout << current->data << endl;
+void towersofhanoi(int n, int source, int intermediate, int destination, int& moves) {
+    if (n > 0) {
+        towersofhanoi(n-1, source, destination, intermediate, moves);
+        cout << "Move " << moves++ << ": Disk " << n << " is moved from tower ";
+        cout << source << " to tower " << destination << endl;
+        towersofhanoi(n-1, intermediate, source, destination, moves);
     }
 }
 
-int main()
-{
-    ListNode *head = NULL, *tmp;
 
-    for (int i = 0; i < 10; i++) {
-        tmp = new ListNode;
-        tmp->data = i;
-        tmp->next = head;
-        head = tmp;
-    }
+int main() {
+    int n, moves = 1;
+    cin >> n;
 
-    tmp = head;
-    while (tmp != NULL) {
-        cout << tmp->data << endl;
-        tmp = tmp->next;
-    }
-    cout << "-------------------" << endl;
-    print_reverse(head);
-
-    while (head != NULL) {
-        tmp = head->next;
-        delete head;
-        head = tmp;
-    }
+    towersofhanoi(n, 1, 2, 3, moves);
 
     return 0;
 }
