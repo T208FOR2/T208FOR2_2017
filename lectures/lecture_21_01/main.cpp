@@ -1,57 +1,38 @@
 #include <iostream>
 using namespace std;
-class Dummy {
-public:
-    Dummy(int k);
-    Dummy(const Dummy& cloneme);
 
-    ~Dummy();
-
-    void operator = (const Dummy& sameasme);
-    int *p;
-    int n;
+struct LinkNode {
+    char data;
+    LinkNode* next;
 };
 
-Dummy::Dummy(int k) {
-    p = new int[k];
-    n = k;
+void printLinkNodes(LinkNode* thenode) {
+    while (thenode != NULL) {
+        cout << thenode->data << " ";
+        thenode = thenode->next;
+    }
+    cout << endl;
 }
 
-Dummy::Dummy(const Dummy& cloneme) {
-    n = cloneme.n;
-    p = new int[n];
-    for (int i = 0; i < n; i++) {
-        p[i] = cloneme.p[i];
-    }
-}
+void switchPlaces(LinkNode* &thenode) {
 
-void Dummy::operator = (const Dummy& sameasme) {
-    if (n != sameasme.n) {
-        delete [] p;
-        n = sameasme.n;
-        p = new int[n];
-    }
+    //*** ADD CODE HERE ***
 
-    for (int i = 0; i < n; i++) {
-        p[i] = sameasme.p[i];
-    }
-}
 
-Dummy::~Dummy() {
-    delete [] p;
-}
-
-void testfunction(Dummy d) {
-    for (int i = 0; i < d.n; i++) {
-        cout << d.p[i] << endl;
-    }
+    //*** END OF ADDED CODE ***
 }
 
 int main() {
-    Dummy x(10);
-    for (int i = 0; i < 10; i++) {
-        cin >> x.p[i];
+    LinkNode* head = NULL, *tmp;
+    char thedata = 'D';
+    for (int i = 0; i < 4; i++) {
+        tmp = new LinkNode;
+        tmp->data = thedata--;
+        tmp->next = head;
+        head = tmp;
     }
-    testfunction(x);
+    printLinkNodes(head);
+    switchPlaces(head);
+    printLinkNodes(head);
     return 0;
 }
