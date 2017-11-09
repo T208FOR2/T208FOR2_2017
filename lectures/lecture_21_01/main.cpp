@@ -19,6 +19,8 @@ private:
     int attack;
     int defence;
     bool coach;
+
+    double strength();
 };
 
 
