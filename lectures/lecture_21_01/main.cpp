@@ -21,11 +21,15 @@ int main()
     cout << "\"" << b << "\"" << endl;
     cout << "\"" << texti << "\"" << endl;
 
+    texti = strip_text(texti);
+
+    cout << "\"" << texti << "\"" << endl;
+
     return 0;
 }
 
 string replace_text(string texti, string a, string b) {
-
+    return "x";
 }
 
 
