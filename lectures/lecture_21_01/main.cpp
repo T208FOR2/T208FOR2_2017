@@ -29,7 +29,12 @@ int main()
 }
 
 string replace_text(string texti, string a, string b) {
-    return "x";
+    unsigned int pos = texti.find(a);
+    while (pos < texti.length()) {
+        texti = texti.substr(0, pos) + b + texti.substr(pos + a.length(), texti.length());
+    }
+
+
 }
 
 
