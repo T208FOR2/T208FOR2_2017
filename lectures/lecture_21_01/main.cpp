@@ -1,58 +1,19 @@
 #include <iostream>
 #include <string>
-#include <cctype>
 
 using namespace std;
 
-string replace_text(string texti, string a, string b);
-string strip_text(string texti);
+class Team{
+public:
 
-int main()
-{
-    string a,b,texti;
+private:
+    string nafn;
+    int attack;
+    int defence;
+    bool coach;
+};
 
-    cin >> a >> b;
-    getline(cin, texti);
-
-    // go through texti and replace a with b
-    // strip whitespace and print out.
-
-    cout << "\"" << a << "\"" << endl;
-    cout << "\"" << b << "\"" << endl;
-    cout << "\"" << texti << "\"" << endl;
-
-    texti = replace_text(texti, a, b);
-    texti = replace_text(texti, "test", "");
-    texti = replace_text(texti, "  ", " ");
-    texti = strip_text(texti);
-
-    cout << "\"" << texti << "\"" << endl;
+int main() {
 
     return 0;
 }
-
-string replace_text(string texti, string a, string b) {
-    unsigned int pos = texti.find(a);
-    while (pos < texti.length()) {
-        texti = texti.substr(0, pos) + b + texti.substr(pos + a.length(), texti.length());
-        pos = texti.find(a, pos+b.length());
-    }
-    return texti;
-}
-
-
-string strip_text(string texti) {
-    while ( isspace(texti[0]) ) {
-        texti = texti.substr(1, texti.length());
-    }
-    while ( isspace(texti[texti.length()-1]) ) {
-        texti = texti.substr(0, texti.length() -1);
-    }
-    return texti;
-}
-
-
-
-
-
-
